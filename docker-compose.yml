@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   web:
     build:
@@ -13,3 +11,4 @@ services:
     command: yarn dev
     environment:
       - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
