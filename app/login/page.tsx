@@ -2,7 +2,8 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { request } from "../lib/axiosUtils";
+import { request } from "../../lib/axiosUtils";
+import { useRouter } from "next/navigation";
 
 const schema = yup
   .object({
@@ -17,6 +18,7 @@ type InputType = {
 };
 
 export default function App() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -30,24 +32,21 @@ export default function App() {
       method: "post",
       data: data,
     });
-    console.log(res.data);
     localStorage.setItem("token", res.data?.access_token);
-    const cus = await request({
-      url: "/api/customers/",
-      method: "get",
-    });
-    console.log(cus.data);
+    router.push("/");
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register("username")} />
-      <p>{errors.username?.message}</p>
+    <div className="flex flex-col items-center justify-center h-screen">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input {...register("username")} />
+        <p>{errors.username?.message}</p>
 
-      <input {...register("password")} />
-      <p>{errors.password?.message}</p>
+        <input {...register("password")} type="password" />
+        <p>{errors.password?.message}</p>
 
-      <input type="submit" />
-    </form>
+        <input type="submit" />
+      </form>
+    </div>
   );
 }

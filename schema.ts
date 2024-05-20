@@ -5,6 +5,18 @@
 
 
 export interface paths {
+  "/api/auth/login/": {
+    /**
+     * @description Check the credentials and return the REST Token
+     * if the credentials are valid and authenticated.
+     * Calls Django Auth login method to register User ID
+     * in Django session framework
+     *
+     * Accept the following POST parameters: username, password
+     * Return the REST Framework Token Object's key.
+     */
+    post: operations["auth_login_create"];
+  };
   "/api/auth/logout/": {
     /**
      * @description Calls Django logout method and delete the Token object
@@ -12,14 +24,50 @@ export interface paths {
      *
      * Accepts/Returns nothing.
      */
-    get: operations["listLogouts"];
+    post: operations["auth_logout_create"];
+  };
+  "/api/auth/password/change/": {
     /**
-     * @description Calls Django logout method and delete the Token object
-     * assigned to the current User object.
+     * @description Calls Django Auth SetPasswordForm save method.
      *
-     * Accepts/Returns nothing.
+     * Accepts the following POST parameters: new_password1, new_password2
+     * Returns the success/fail message.
      */
-    post: operations["createLogout"];
+    post: operations["auth_password_change_create"];
+  };
+  "/api/auth/password/reset/": {
+    /**
+     * @description Calls Django Auth PasswordResetForm save method.
+     *
+     * Accepts the following POST parameters: email
+     * Returns the success/fail message.
+     */
+    post: operations["auth_password_reset_create"];
+  };
+  "/api/auth/password/reset/confirm/": {
+    /**
+     * @description Password reset e-mail link is confirmed, therefore
+     * this resets the user's password.
+     *
+     * Accepts the following POST parameters: token, uid,
+     *     new_password1, new_password2
+     * Returns the success/fail message.
+     */
+    post: operations["auth_password_reset_confirm_create"];
+  };
+  "/api/auth/token/refresh/": {
+    /**
+     * @description Takes a refresh type JSON web token and returns an access type JSON web
+     * token if the refresh token is valid.
+     */
+    post: operations["auth_token_refresh_create"];
+  };
+  "/api/auth/token/verify/": {
+    /**
+     * @description Takes a token and indicates if it is valid.  This view provides no
+     * information about a token's fitness for a particular use.
+     */
+    post: operations["auth_token_verify_create"];
   };
   "/api/auth/user/": {
     /**
@@ -32,7 +80,7 @@ export interface paths {
      *
      * Returns UserModel fields.
      */
-    get: operations["retrieveUserDetails"];
+    get: operations["auth_user_retrieve"];
     /**
      * @description Reads and updates UserModel fields
      * Accepts GET, PUT, PATCH methods.
@@ -43,7 +91,7 @@ export interface paths {
      *
      * Returns UserModel fields.
      */
-    put: operations["updateUserDetails"];
+    put: operations["auth_user_update"];
     /**
      * @description Reads and updates UserModel fields
      * Accepts GET, PUT, PATCH methods.
@@ -54,88 +102,40 @@ export interface paths {
      *
      * Returns UserModel fields.
      */
-    patch: operations["partialUpdateUserDetails"];
+    patch: operations["auth_user_partial_update"];
   };
   "/api/customers/": {
-    get: operations["listCustomers"];
-    post: operations["createCustomer"];
+    get: operations["customers_list"];
+    post: operations["customers_create"];
   };
   "/api/customers/{customer_id}/": {
-    get: operations["retrieveCustomer"];
-    put: operations["updateCustomer"];
-    delete: operations["destroyCustomer"];
-    patch: operations["partialUpdateCustomer"];
+    get: operations["customers_retrieve"];
+    put: operations["customers_update"];
+    delete: operations["customers_destroy"];
+    patch: operations["customers_partial_update"];
   };
-  "/api/products/": {
-    get: operations["listProducts"];
-    post: operations["createProduct"];
-  };
-  "/api/products/{product_id}/": {
-    get: operations["retrieveProduct"];
-    put: operations["updateProduct"];
-    delete: operations["destroyProduct"];
-    patch: operations["partialUpdateProduct"];
+  "/api/customers/bulk_update/": {
+    put: operations["customers_bulk_update_update"];
   };
   "/api/orders/": {
-    get: operations["listOrders"];
-    post: operations["createOrder"];
+    get: operations["orders_list"];
+    post: operations["orders_create"];
   };
   "/api/orders/{order_id}/": {
-    get: operations["retrieveOrder"];
-    put: operations["updateOrder"];
-    delete: operations["destroyOrder"];
-    patch: operations["partialUpdateOrder"];
+    get: operations["orders_retrieve"];
+    put: operations["orders_update"];
+    delete: operations["orders_destroy"];
+    patch: operations["orders_partial_update"];
   };
-  "/api/auth/password/reset/": {
-    /**
-     * @description Calls Django Auth PasswordResetForm save method.
-     *
-     * Accepts the following POST parameters: email
-     * Returns the success/fail message.
-     */
-    post: operations["createPasswordReset"];
+  "/api/products/": {
+    get: operations["products_list"];
+    post: operations["products_create"];
   };
-  "/api/auth/password/reset/confirm/": {
-    /**
-     * @description Password reset e-mail link is confirmed, therefore
-     * this resets the user's password.
-     *
-     * Accepts the following POST parameters: token, uid,
-     *     new_password1, new_password2
-     * Returns the success/fail message.
-     */
-    post: operations["createPasswordResetConfirm"];
-  };
-  "/api/auth/login/": {
-    /**
-     * @description Check the credentials and return the REST Token
-     * if the credentials are valid and authenticated.
-     * Calls Django Auth login method to register User ID
-     * in Django session framework
-     *
-     * Accept the following POST parameters: username, password
-     * Return the REST Framework Token Object's key.
-     */
-    post: operations["createLogin"];
-  };
-  "/api/auth/password/change/": {
-    /**
-     * @description Calls Django Auth SetPasswordForm save method.
-     *
-     * Accepts the following POST parameters: new_password1, new_password2
-     * Returns the success/fail message.
-     */
-    post: operations["createPasswordChange"];
-  };
-  "/api/auth/token/verify/": {
-    /**
-     * @description Takes a token and indicates if it is valid.  This view provides no
-     * information about a token's fitness for a particular use.
-     */
-    post: operations["createTokenVerify"];
-  };
-  "/api/auth/token/refresh/": {
-    post: operations["createCookieTokenRefresh"];
+  "/api/products/{product_id}/": {
+    get: operations["products_retrieve"];
+    put: operations["products_update"];
+    delete: operations["products_destroy"];
+    patch: operations["products_partial_update"];
   };
 }
 
@@ -143,51 +143,20 @@ export type webhooks = Record<string, never>;
 
 export interface components {
   schemas: {
-    UserDetails: {
-      pk?: number;
-      /** @description Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. */
-      username: string;
-      /** Format: email */
-      email?: string;
-      first_name?: string;
-      last_name?: string;
-    };
     Customer: {
-      customer_id?: number;
+      customer_id: number;
+      cookie?: number;
       name: string;
       address: string;
       phone: string;
-    };
-    Product: {
-      product_id?: number;
-      name: string;
-      description: string;
-      /** Format: decimal */
-      price: string;
-    };
-    Order: {
-      order_id?: number;
-      items: {
-          order_item_id?: number;
-          quantity: number;
-          /** Format: decimal */
-          price: string;
-          order: number;
-          product: number;
-        }[];
       /** Format: date-time */
-      order_date?: string;
-      customer: number;
+      deleted_at?: string | null;
     };
-    PasswordReset: {
-      /** Format: email */
-      email: string;
-    };
-    PasswordResetConfirm: {
-      new_password1: string;
-      new_password2: string;
-      uid: string;
-      token: string;
+    /** @description Serializer for JWT authentication. */
+    JWT: {
+      access_token: string;
+      refresh_token: string;
+      user: components["schemas"]["UserDetails"];
     };
     Login: {
       username?: string;
@@ -195,17 +164,104 @@ export interface components {
       email?: string;
       password: string;
     };
+    Order: {
+      order_id: number;
+      items: components["schemas"]["OrderItem"][];
+      /** Format: date-time */
+      order_date: string;
+      customer: number;
+    };
+    OrderItem: {
+      order_item_id: number;
+      quantity: number;
+      /** Format: decimal */
+      price: string;
+      order: number;
+      product: number;
+    };
     PasswordChange: {
       new_password1: string;
       new_password2: string;
     };
+    /** @description Serializer for requesting a password reset e-mail. */
+    PasswordReset: {
+      /** Format: email */
+      email: string;
+    };
+    /** @description Serializer for confirming a password reset attempt. */
+    PasswordResetConfirm: {
+      new_password1: string;
+      new_password2: string;
+      uid: string;
+      token: string;
+    };
+    PatchedCustomer: {
+      customer_id?: number;
+      cookie?: number;
+      name?: string;
+      address?: string;
+      phone?: string;
+      /** Format: date-time */
+      deleted_at?: string | null;
+    };
+    PatchedOrder: {
+      order_id?: number;
+      items?: components["schemas"]["OrderItem"][];
+      /** Format: date-time */
+      order_date?: string;
+      customer?: number;
+    };
+    PatchedProduct: {
+      product_id?: number;
+      name?: string;
+      description?: string;
+      /** Format: decimal */
+      price?: string;
+    };
+    /** @description User model w/o password */
+    PatchedUserDetails: {
+      /** ID */
+      pk?: number;
+      /** @description Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. */
+      username?: string;
+      /**
+       * Email address
+       * Format: email
+       */
+      email?: string;
+      first_name?: string;
+      last_name?: string;
+    };
+    Product: {
+      product_id: number;
+      name: string;
+      description: string;
+      /** Format: decimal */
+      price: string;
+    };
+    RestAuthDetail: {
+      detail: string;
+    };
+    TokenRefresh: {
+      access: string;
+      refresh: string;
+    };
     TokenVerify: {
       token: string;
     };
-    CookieTokenRefresh: {
-      /** @description WIll override cookie. */
-      refresh?: string;
-      access?: string;
+    /** @description User model w/o password */
+    UserDetails: {
+      /** ID */
+      pk: number;
+      /** @description Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. */
+      username: string;
+      /**
+       * Email address
+       * Format: email
+       */
+      email: string;
+      first_name?: string;
+      last_name?: string;
     };
   };
   responses: never;
@@ -222,16 +278,26 @@ export type external = Record<string, never>;
 export interface operations {
 
   /**
-   * @description Calls Django logout method and delete the Token object
-   * assigned to the current User object.
+   * @description Check the credentials and return the REST Token
+   * if the credentials are valid and authenticated.
+   * Calls Django Auth login method to register User ID
+   * in Django session framework
    *
-   * Accepts/Returns nothing.
+   * Accept the following POST parameters: username, password
+   * Return the REST Framework Token Object's key.
    */
-  listLogouts: {
+  auth_login_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["Login"];
+        "application/x-www-form-urlencoded": components["schemas"]["Login"];
+        "multipart/form-data": components["schemas"]["Login"];
+      };
+    };
     responses: {
       200: {
         content: {
-          "application/json": unknown[];
+          "application/json": components["schemas"]["JWT"];
         };
       };
     };
@@ -242,380 +308,33 @@ export interface operations {
    *
    * Accepts/Returns nothing.
    */
-  createLogout: {
-    requestBody?: {
-      content: {
-        "application/json": unknown;
-        "application/x-www-form-urlencoded": unknown;
-        "multipart/form-data": unknown;
-      };
-    };
+  auth_logout_create: {
     responses: {
-      201: {
+      200: {
         content: {
-          "application/json": unknown;
+          "application/json": components["schemas"]["RestAuthDetail"];
         };
       };
     };
   };
   /**
-   * @description Reads and updates UserModel fields
-   * Accepts GET, PUT, PATCH methods.
+   * @description Calls Django Auth SetPasswordForm save method.
    *
-   * Default accepted fields: username, first_name, last_name
-   * Default display fields: pk, username, email, first_name, last_name
-   * Read-only fields: pk, email
-   *
-   * Returns UserModel fields.
+   * Accepts the following POST parameters: new_password1, new_password2
+   * Returns the success/fail message.
    */
-  retrieveUserDetails: {
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserDetails"];
-        };
-      };
-    };
-  };
-  /**
-   * @description Reads and updates UserModel fields
-   * Accepts GET, PUT, PATCH methods.
-   *
-   * Default accepted fields: username, first_name, last_name
-   * Default display fields: pk, username, email, first_name, last_name
-   * Read-only fields: pk, email
-   *
-   * Returns UserModel fields.
-   */
-  updateUserDetails: {
-    requestBody?: {
+  auth_password_change_create: {
+    requestBody: {
       content: {
-        "application/json": components["schemas"]["UserDetails"];
-        "application/x-www-form-urlencoded": components["schemas"]["UserDetails"];
-        "multipart/form-data": components["schemas"]["UserDetails"];
+        "application/json": components["schemas"]["PasswordChange"];
+        "application/x-www-form-urlencoded": components["schemas"]["PasswordChange"];
+        "multipart/form-data": components["schemas"]["PasswordChange"];
       };
     };
     responses: {
       200: {
         content: {
-          "application/json": components["schemas"]["UserDetails"];
-        };
-      };
-    };
-  };
-  /**
-   * @description Reads and updates UserModel fields
-   * Accepts GET, PUT, PATCH methods.
-   *
-   * Default accepted fields: username, first_name, last_name
-   * Default display fields: pk, username, email, first_name, last_name
-   * Read-only fields: pk, email
-   *
-   * Returns UserModel fields.
-   */
-  partialUpdateUserDetails: {
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["UserDetails"];
-        "application/x-www-form-urlencoded": components["schemas"]["UserDetails"];
-        "multipart/form-data": components["schemas"]["UserDetails"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["UserDetails"];
-        };
-      };
-    };
-  };
-  listCustomers: {
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Customer"][];
-        };
-      };
-    };
-  };
-  createCustomer: {
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["Customer"];
-        "application/x-www-form-urlencoded": components["schemas"]["Customer"];
-        "multipart/form-data": components["schemas"]["Customer"];
-      };
-    };
-    responses: {
-      201: {
-        content: {
-          "application/json": components["schemas"]["Customer"];
-        };
-      };
-    };
-  };
-  retrieveCustomer: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this customer. */
-        customer_id: string;
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Customer"];
-        };
-      };
-    };
-  };
-  updateCustomer: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this customer. */
-        customer_id: string;
-      };
-    };
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["Customer"];
-        "application/x-www-form-urlencoded": components["schemas"]["Customer"];
-        "multipart/form-data": components["schemas"]["Customer"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Customer"];
-        };
-      };
-    };
-  };
-  destroyCustomer: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this customer. */
-        customer_id: string;
-      };
-    };
-    responses: {
-      204: {
-        content: never;
-      };
-    };
-  };
-  partialUpdateCustomer: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this customer. */
-        customer_id: string;
-      };
-    };
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["Customer"];
-        "application/x-www-form-urlencoded": components["schemas"]["Customer"];
-        "multipart/form-data": components["schemas"]["Customer"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Customer"];
-        };
-      };
-    };
-  };
-  listProducts: {
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Product"][];
-        };
-      };
-    };
-  };
-  createProduct: {
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["Product"];
-        "application/x-www-form-urlencoded": components["schemas"]["Product"];
-        "multipart/form-data": components["schemas"]["Product"];
-      };
-    };
-    responses: {
-      201: {
-        content: {
-          "application/json": components["schemas"]["Product"];
-        };
-      };
-    };
-  };
-  retrieveProduct: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this product. */
-        product_id: string;
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Product"];
-        };
-      };
-    };
-  };
-  updateProduct: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this product. */
-        product_id: string;
-      };
-    };
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["Product"];
-        "application/x-www-form-urlencoded": components["schemas"]["Product"];
-        "multipart/form-data": components["schemas"]["Product"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Product"];
-        };
-      };
-    };
-  };
-  destroyProduct: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this product. */
-        product_id: string;
-      };
-    };
-    responses: {
-      204: {
-        content: never;
-      };
-    };
-  };
-  partialUpdateProduct: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this product. */
-        product_id: string;
-      };
-    };
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["Product"];
-        "application/x-www-form-urlencoded": components["schemas"]["Product"];
-        "multipart/form-data": components["schemas"]["Product"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Product"];
-        };
-      };
-    };
-  };
-  listOrders: {
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Order"][];
-        };
-      };
-    };
-  };
-  createOrder: {
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["Order"];
-        "application/x-www-form-urlencoded": components["schemas"]["Order"];
-        "multipart/form-data": components["schemas"]["Order"];
-      };
-    };
-    responses: {
-      201: {
-        content: {
-          "application/json": components["schemas"]["Order"];
-        };
-      };
-    };
-  };
-  retrieveOrder: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this order. */
-        order_id: string;
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Order"];
-        };
-      };
-    };
-  };
-  updateOrder: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this order. */
-        order_id: string;
-      };
-    };
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["Order"];
-        "application/x-www-form-urlencoded": components["schemas"]["Order"];
-        "multipart/form-data": components["schemas"]["Order"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Order"];
-        };
-      };
-    };
-  };
-  destroyOrder: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this order. */
-        order_id: string;
-      };
-    };
-    responses: {
-      204: {
-        content: never;
-      };
-    };
-  };
-  partialUpdateOrder: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this order. */
-        order_id: string;
-      };
-    };
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["Order"];
-        "application/x-www-form-urlencoded": components["schemas"]["Order"];
-        "multipart/form-data": components["schemas"]["Order"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Order"];
+          "application/json": components["schemas"]["RestAuthDetail"];
         };
       };
     };
@@ -626,8 +345,8 @@ export interface operations {
    * Accepts the following POST parameters: email
    * Returns the success/fail message.
    */
-  createPasswordReset: {
-    requestBody?: {
+  auth_password_reset_create: {
+    requestBody: {
       content: {
         "application/json": components["schemas"]["PasswordReset"];
         "application/x-www-form-urlencoded": components["schemas"]["PasswordReset"];
@@ -635,9 +354,9 @@ export interface operations {
       };
     };
     responses: {
-      201: {
+      200: {
         content: {
-          "application/json": components["schemas"]["PasswordReset"];
+          "application/json": components["schemas"]["RestAuthDetail"];
         };
       };
     };
@@ -650,8 +369,8 @@ export interface operations {
    *     new_password1, new_password2
    * Returns the success/fail message.
    */
-  createPasswordResetConfirm: {
-    requestBody?: {
+  auth_password_reset_confirm_create: {
+    requestBody: {
       content: {
         "application/json": components["schemas"]["PasswordResetConfirm"];
         "application/x-www-form-urlencoded": components["schemas"]["PasswordResetConfirm"];
@@ -659,56 +378,29 @@ export interface operations {
       };
     };
     responses: {
-      201: {
+      200: {
         content: {
-          "application/json": components["schemas"]["PasswordResetConfirm"];
+          "application/json": components["schemas"]["RestAuthDetail"];
         };
       };
     };
   };
   /**
-   * @description Check the credentials and return the REST Token
-   * if the credentials are valid and authenticated.
-   * Calls Django Auth login method to register User ID
-   * in Django session framework
-   *
-   * Accept the following POST parameters: username, password
-   * Return the REST Framework Token Object's key.
+   * @description Takes a refresh type JSON web token and returns an access type JSON web
+   * token if the refresh token is valid.
    */
-  createLogin: {
-    requestBody?: {
+  auth_token_refresh_create: {
+    requestBody: {
       content: {
-        "application/json": components["schemas"]["Login"];
-        "application/x-www-form-urlencoded": components["schemas"]["Login"];
-        "multipart/form-data": components["schemas"]["Login"];
+        "application/json": components["schemas"]["TokenRefresh"];
+        "application/x-www-form-urlencoded": components["schemas"]["TokenRefresh"];
+        "multipart/form-data": components["schemas"]["TokenRefresh"];
       };
     };
     responses: {
-      201: {
+      200: {
         content: {
-          "application/json": components["schemas"]["Login"];
-        };
-      };
-    };
-  };
-  /**
-   * @description Calls Django Auth SetPasswordForm save method.
-   *
-   * Accepts the following POST parameters: new_password1, new_password2
-   * Returns the success/fail message.
-   */
-  createPasswordChange: {
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["PasswordChange"];
-        "application/x-www-form-urlencoded": components["schemas"]["PasswordChange"];
-        "multipart/form-data": components["schemas"]["PasswordChange"];
-      };
-    };
-    responses: {
-      201: {
-        content: {
-          "application/json": components["schemas"]["PasswordChange"];
+          "application/json": components["schemas"]["TokenRefresh"];
         };
       };
     };
@@ -717,8 +409,8 @@ export interface operations {
    * @description Takes a token and indicates if it is valid.  This view provides no
    * information about a token's fitness for a particular use.
    */
-  createTokenVerify: {
-    requestBody?: {
+  auth_token_verify_create: {
+    requestBody: {
       content: {
         "application/json": components["schemas"]["TokenVerify"];
         "application/x-www-form-urlencoded": components["schemas"]["TokenVerify"];
@@ -726,25 +418,398 @@ export interface operations {
       };
     };
     responses: {
-      201: {
+      200: {
         content: {
           "application/json": components["schemas"]["TokenVerify"];
         };
       };
     };
   };
-  createCookieTokenRefresh: {
+  /**
+   * @description Reads and updates UserModel fields
+   * Accepts GET, PUT, PATCH methods.
+   *
+   * Default accepted fields: username, first_name, last_name
+   * Default display fields: pk, username, email, first_name, last_name
+   * Read-only fields: pk, email
+   *
+   * Returns UserModel fields.
+   */
+  auth_user_retrieve: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["UserDetails"];
+        };
+      };
+    };
+  };
+  /**
+   * @description Reads and updates UserModel fields
+   * Accepts GET, PUT, PATCH methods.
+   *
+   * Default accepted fields: username, first_name, last_name
+   * Default display fields: pk, username, email, first_name, last_name
+   * Read-only fields: pk, email
+   *
+   * Returns UserModel fields.
+   */
+  auth_user_update: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["UserDetails"];
+        "application/x-www-form-urlencoded": components["schemas"]["UserDetails"];
+        "multipart/form-data": components["schemas"]["UserDetails"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["UserDetails"];
+        };
+      };
+    };
+  };
+  /**
+   * @description Reads and updates UserModel fields
+   * Accepts GET, PUT, PATCH methods.
+   *
+   * Default accepted fields: username, first_name, last_name
+   * Default display fields: pk, username, email, first_name, last_name
+   * Read-only fields: pk, email
+   *
+   * Returns UserModel fields.
+   */
+  auth_user_partial_update: {
     requestBody?: {
       content: {
-        "application/json": components["schemas"]["CookieTokenRefresh"];
-        "application/x-www-form-urlencoded": components["schemas"]["CookieTokenRefresh"];
-        "multipart/form-data": components["schemas"]["CookieTokenRefresh"];
+        "application/json": components["schemas"]["PatchedUserDetails"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedUserDetails"];
+        "multipart/form-data": components["schemas"]["PatchedUserDetails"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["UserDetails"];
+        };
+      };
+    };
+  };
+  customers_list: {
+    parameters: {
+      query?: {
+        address?: string;
+        deleted_at?: string;
+        name?: string;
+        phone?: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Customer"][];
+        };
+      };
+    };
+  };
+  customers_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["Customer"];
+        "application/x-www-form-urlencoded": components["schemas"]["Customer"];
+        "multipart/form-data": components["schemas"]["Customer"];
       };
     };
     responses: {
       201: {
         content: {
-          "application/json": components["schemas"]["CookieTokenRefresh"];
+          "application/json": components["schemas"]["Customer"];
+        };
+      };
+    };
+  };
+  customers_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this customer. */
+        customer_id: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Customer"];
+        };
+      };
+    };
+  };
+  customers_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this customer. */
+        customer_id: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["Customer"];
+        "application/x-www-form-urlencoded": components["schemas"]["Customer"];
+        "multipart/form-data": components["schemas"]["Customer"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Customer"];
+        };
+      };
+    };
+  };
+  customers_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this customer. */
+        customer_id: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  customers_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this customer. */
+        customer_id: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedCustomer"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedCustomer"];
+        "multipart/form-data": components["schemas"]["PatchedCustomer"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Customer"];
+        };
+      };
+    };
+  };
+  customers_bulk_update_update: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["Customer"];
+        "application/x-www-form-urlencoded": components["schemas"]["Customer"];
+        "multipart/form-data": components["schemas"]["Customer"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Customer"];
+        };
+      };
+    };
+  };
+  orders_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Order"][];
+        };
+      };
+    };
+  };
+  orders_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["Order"];
+        "application/x-www-form-urlencoded": components["schemas"]["Order"];
+        "multipart/form-data": components["schemas"]["Order"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["Order"];
+        };
+      };
+    };
+  };
+  orders_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this order. */
+        order_id: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Order"];
+        };
+      };
+    };
+  };
+  orders_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this order. */
+        order_id: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["Order"];
+        "application/x-www-form-urlencoded": components["schemas"]["Order"];
+        "multipart/form-data": components["schemas"]["Order"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Order"];
+        };
+      };
+    };
+  };
+  orders_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this order. */
+        order_id: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  orders_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this order. */
+        order_id: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedOrder"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedOrder"];
+        "multipart/form-data": components["schemas"]["PatchedOrder"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Order"];
+        };
+      };
+    };
+  };
+  products_list: {
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Product"][];
+        };
+      };
+    };
+  };
+  products_create: {
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["Product"];
+        "application/x-www-form-urlencoded": components["schemas"]["Product"];
+        "multipart/form-data": components["schemas"]["Product"];
+      };
+    };
+    responses: {
+      201: {
+        content: {
+          "application/json": components["schemas"]["Product"];
+        };
+      };
+    };
+  };
+  products_retrieve: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this product. */
+        product_id: number;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Product"];
+        };
+      };
+    };
+  };
+  products_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this product. */
+        product_id: number;
+      };
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["Product"];
+        "application/x-www-form-urlencoded": components["schemas"]["Product"];
+        "multipart/form-data": components["schemas"]["Product"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Product"];
+        };
+      };
+    };
+  };
+  products_destroy: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this product. */
+        product_id: number;
+      };
+    };
+    responses: {
+      /** @description No response body */
+      204: {
+        content: never;
+      };
+    };
+  };
+  products_partial_update: {
+    parameters: {
+      path: {
+        /** @description A unique integer value identifying this product. */
+        product_id: number;
+      };
+    };
+    requestBody?: {
+      content: {
+        "application/json": components["schemas"]["PatchedProduct"];
+        "application/x-www-form-urlencoded": components["schemas"]["PatchedProduct"];
+        "multipart/form-data": components["schemas"]["PatchedProduct"];
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          "application/json": components["schemas"]["Product"];
         };
       };
     };

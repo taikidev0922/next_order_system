@@ -119,6 +119,794 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@mescius/wijmo.barcode.common@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.barcode.common/-/wijmo.barcode.common-5.20241.9.tgz#5ea5f393c79cdbe745e0e200ec71f8b4ab22b6b6"
+  integrity sha512-EYcKDuncI0sBFWzbzgwDFOUX3uLm2iDo7zI+pNBwTQI6AMr56lPYfysj2VVhQJpSnUIisi1pnBb1siOckeuYnA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.barcode" "5.20241.9"
+
+"@mescius/wijmo.barcode.composite@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.barcode.composite/-/wijmo.barcode.composite-5.20241.9.tgz#fa9c0d730ee5121b9bb4d4cf73fea89f9954a360"
+  integrity sha512-RWGsYK42956di/szihgkdKw+oTs9aKPgrFfnkDvfItB0qiW4F0FXDP4VYIVl6q+VfW4+m9VGSq31RdyoFfDpWw==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.barcode" "5.20241.9"
+
+"@mescius/wijmo.barcode.specialized@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.barcode.specialized/-/wijmo.barcode.specialized-5.20241.9.tgz#047e55920201df05dffe4f2a7aa4473f96b787bc"
+  integrity sha512-9U/tXi0kpQ5UvkZNkOWMXXsauq0wSvn8TMoPIRNJdJN1imtiM51JWCZJp7cBOK/9DfjHJC/9KssWjy674bzFfA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.barcode" "5.20241.9"
+
+"@mescius/wijmo.barcode@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.barcode/-/wijmo.barcode-5.20241.9.tgz#368486277ca724b2ec8ca53e80937c4a39d3c8ad"
+  integrity sha512-SeafeFq+MhgAaGiowlyPFjRObRrYdXYORtvzRoWeSHj9wmBQ0CdOpJI7nSBCZV1c2P3nZXT3wc04O1EN+HeZ7A==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+
+"@mescius/wijmo.chart.analytics@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.chart.analytics/-/wijmo.chart.analytics-5.20241.9.tgz#d77c6846b7399fc5840efb065e750a40f956e030"
+  integrity sha512-9/9vt3MvrLIvOxK9y+Ad5u1UdkLZ3HHYzzriEBtXqOcP0ZiIl7YZ8NmRW7oQhB7gDHvbXfUqgzVqeJzR6n6O/w==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+
+"@mescius/wijmo.chart.animation@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.chart.animation/-/wijmo.chart.animation-5.20241.9.tgz#6ded87f96b5b857f164b69c9bc9100a473eb0164"
+  integrity sha512-XYBXWPz2QSo2YerQEX1EBfJLRibsqroYqrFZL1bThWLqq/8wGVTU+JRSPldYQc9SYxyCoA6LcGKpEoecXL4Yng==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+
+"@mescius/wijmo.chart.annotation@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.chart.annotation/-/wijmo.chart.annotation-5.20241.9.tgz#9e1688dfc48d4b02ca438617671d6a375de7eb06"
+  integrity sha512-dPhf/gndWpgvTvzrl7Bdd0fkeAVeAbeO0opwEqbfuvAlyvVKFGdFA5geEdyGjH7mndI9sERX+Kf5/sLxXBmpxw==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+
+"@mescius/wijmo.chart.finance.analytics@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.chart.finance.analytics/-/wijmo.chart.finance.analytics-5.20241.9.tgz#e53f9d0a7ecf8262e846cb36d818e5d0e6e6e88f"
+  integrity sha512-HmjilBXyed88CxiR62yOAEh+3PBvGYot2dxR+vvWwlEmPItysSoF89VOeWTj+YfOiazvoJy/Kk7MX7l5nF/wrQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+    "@mescius/wijmo.chart.finance" "5.20241.9"
+
+"@mescius/wijmo.chart.finance@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.chart.finance/-/wijmo.chart.finance-5.20241.9.tgz#f19a57dac394d5d4aaa65394b0fb266298e154fe"
+  integrity sha512-5tyUQzcHZaIdHzGsAbXqAhoJAWBg/vL7UzA0O1z8LbsQAfxN3Fl2ORomf6usr+PuupKm+yXV/bBgZVrrFrQTNQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+
+"@mescius/wijmo.chart.hierarchical@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.chart.hierarchical/-/wijmo.chart.hierarchical-5.20241.9.tgz#cab78c1135f39988be621335aeb21819dbf94d89"
+  integrity sha512-uQP+kO7FzIc8jTJK5ObKhQc0IDAevV2oYrdaZIvR/9CPSwZW7ItBEdhdTBMvFulZ+73W/EWIGNhFTPKe45gAGg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+
+"@mescius/wijmo.chart.interaction@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.chart.interaction/-/wijmo.chart.interaction-5.20241.9.tgz#30c7f079e91c82429b593703e4ed1f439c08e549"
+  integrity sha512-ssWI4kW1hEsEgpcH2ukzgqAaXi1acAlRAkfjirQp+qqVofPcyrxTgjhU5OmmUohlrdGy2jVULblIBq/gNx9tcw==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+
+"@mescius/wijmo.chart.map@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.chart.map/-/wijmo.chart.map-5.20241.9.tgz#219df54b9d21dd9cd0cc4161b021e4d792cbf6ac"
+  integrity sha512-OaohppBw9DgdTbul9vjmrZRtsJ6kNkidJWk1M6ijxPTtfTnNgYJAIAYu/8J12rylfqVeY8poaG4gH7wCYSrCog==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+
+"@mescius/wijmo.chart.radar@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.chart.radar/-/wijmo.chart.radar-5.20241.9.tgz#8314b96edb4632b18eb44717365980607890e9e1"
+  integrity sha512-Tj8JXJYnbZKK8TRfVxlncCTxt4MkAqhPzqDVT1aoopAlidYjSbzCUgGhhC11kEQgM+LkrtFGCD1/DoyjE/1Grg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+
+"@mescius/wijmo.chart.render@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.chart.render/-/wijmo.chart.render-5.20241.9.tgz#b36530138ecf5972285ae7bffed4ae593ff457d3"
+  integrity sha512-bKxLwwb2UA50L5+D4kvUbSXiSL+xuZVJKSEV/MTIIJVM2T5pRIMPF5BL5iv1e/dFjQ37lrq15GW73TeV1B1ntw==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+
+"@mescius/wijmo.chart.webgl@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.chart.webgl/-/wijmo.chart.webgl-5.20241.9.tgz#25be1925a9c3b8c7c39e064f35af807f4d9bc733"
+  integrity sha512-b8NuRO165NHIkxrG1OqjQ3QP3ZEvwpyCcDu5oLSoYrWOtZypFxb8rddbC8JmOkRXKZkVPQ/rllceZubadqZF6A==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+
+"@mescius/wijmo.chart@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.chart/-/wijmo.chart-5.20241.9.tgz#e63c84a0b5e3b63b5eee3f964a526bae7c13328b"
+  integrity sha512-5O5TKCSEQ1Bw0XXZ+cVf3QYxi4zN3HarMaCWnzqru0U7uWViTkSINHzTLOKHaUDRnJKasN+2QQxnjFq9EZOeIg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+
+"@mescius/wijmo.cloud@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.cloud/-/wijmo.cloud-5.20241.9.tgz#a221cea439a45828e87ab17ee1bbb5690cb393d1"
+  integrity sha512-+MeIYe6/JU4EobXmt2O8R4INFfadR59z4YHR45WD5PFkvp+3JuGTg2j3E9CRxxr62UJNe5ForsBMVBt3frDpow==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.filter" "5.20241.9"
+
+"@mescius/wijmo.cultures@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.cultures/-/wijmo.cultures-5.20241.9.tgz#cdf4acd23c38150f9b063e304ef7142bcc033e6c"
+  integrity sha512-hR2O0masHJYcP/IQ9h87xu99gH57EVP9gU9oOzUiGIxXqudqpa5lu1U1gybcKZHOGlkV3LdUF42X4m4xWCcv6w==
+
+"@mescius/wijmo.gauge@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.gauge/-/wijmo.gauge-5.20241.9.tgz#8b9c9c790a36a3ffceab040b45523ec719150fd4"
+  integrity sha512-4ikyRTNig9lE/tvgjUOuSOruSwkTeOm2sjTnRVtikt6YuiaCVdkQe93u+UmmqeHxA3ot8RTHGMGjSEJmghC5OA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+
+"@mescius/wijmo.grid.cellmaker@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.cellmaker/-/wijmo.grid.cellmaker-5.20241.9.tgz#be9e56c1cddcb976e4c6ea804b0473e83b0ae408"
+  integrity sha512-ZhoTtfUmS0yKfcLPi5ZlP0ihDFwFKxTTi0e0cqwGr6lpK+RE40sCIY4shODW30TN7oB586o9DrkeOEd6aXiDrg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+
+"@mescius/wijmo.grid.detail@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.detail/-/wijmo.grid.detail-5.20241.9.tgz#50c2112a28cd7d0b81a3a87952bf3a00f6801426"
+  integrity sha512-TcMzc8ppRfgrFWdmb3CDkuq3bKJ+a/yO7bWUB723W+aJJiJrKnmTUdyRoGyBs58lKSsmk61DdlL04pl9AbDVNQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+
+"@mescius/wijmo.grid.filter@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.filter/-/wijmo.grid.filter-5.20241.9.tgz#1832cbb06af7dc8e17405d573c0cfee12ac0b48f"
+  integrity sha512-zgC/+oMBpbHVzYc3wbyTR3XzQCWZCFOdm52TIio6wi7hXLrfFPmwUwEpwYrusaid/RlUbZJobjr+EC4ahrZ9Aw==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+
+"@mescius/wijmo.grid.grouppanel@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.grouppanel/-/wijmo.grid.grouppanel-5.20241.9.tgz#0495ac054dadc56b7f250d92eecb7dc06b48d992"
+  integrity sha512-Yf9KskfBkV9QRE8SYLnhcMr/QFToncXPa18+qmW3gnTz5rEYR2pE+fWRoA4KjGLoUDOL3WfJ5CE37/M69cxK/w==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.filter" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+
+"@mescius/wijmo.grid.immutable@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.immutable/-/wijmo.grid.immutable-5.20241.9.tgz#cf52897db4e22d48301e970322e2324a2e0b0db8"
+  integrity sha512-K7k4LS9C1dCp+4SGesTVAIIqykhhyi/fyqnnGpoaMREHwKpKHCZ52WGu4RqmgQOxKq6eb78mzqr5TOEcsfvJ/Q==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+
+"@mescius/wijmo.grid.multirow@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.multirow/-/wijmo.grid.multirow-5.20241.9.tgz#fa48b0478eff08b0299dc2132913eae5f6cfd475"
+  integrity sha512-6Afl8pAJ502yKiBHQ2OoVJkS87RLI1Tm7JLi0veB2OiSjy9gZBBBVaqumVIHHaZUIyiBqLBxWbNBkbOL1CGb3Q==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+
+"@mescius/wijmo.grid.pdf@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.pdf/-/wijmo.grid.pdf-5.20241.9.tgz#b60d3014ce37ffa5ff2926a1ab9d93ffecd3ed94"
+  integrity sha512-tug+A1j63qNFCI5cxX7J/G6/xfQEbpHTZkVfg+HjOaC/AOv/SBl+QLrjlZUbzK5TE51qTAP+M4f173HDYBCS3A==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.detail" "5.20241.9"
+    "@mescius/wijmo.grid.filter" "5.20241.9"
+    "@mescius/wijmo.grid.multirow" "5.20241.9"
+    "@mescius/wijmo.grid.sheet" "5.20241.9"
+    "@mescius/wijmo.grid.transposed" "5.20241.9"
+    "@mescius/wijmo.grid.transposedmultirow" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+    "@mescius/wijmo.pdf" "5.20241.9"
+    "@mescius/wijmo.xlsx" "5.20241.9"
+
+"@mescius/wijmo.grid.search@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.search/-/wijmo.grid.search-5.20241.9.tgz#04e3ff627a277db1d8fa251f9e61246f7bed3014"
+  integrity sha512-XZsS9ZyL4do6RNRJWtvBvh/wJxnlqcOYhfkJSYET5NG5EPLtYZFsMA1njbPtl83Pg9awnINnYXkIR40szGRXnw==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+
+"@mescius/wijmo.grid.selector@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.selector/-/wijmo.grid.selector-5.20241.9.tgz#3056c71a0a01d609ea82b6eccfef95922b3e0336"
+  integrity sha512-B27RC+Dkp5W6vty4WCZIrgUN8gch4bg760F90CdLlUp+ogAmHdT5xUCXYWb81cRZsZWkci7jKPI7kZ1+2OE0cw==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+
+"@mescius/wijmo.grid.sheet@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.sheet/-/wijmo.grid.sheet-5.20241.9.tgz#c69d4369524ffbf2a0bf47609d107240dada7ebc"
+  integrity sha512-CXZYadqALViWtJyGrDJo7LSOAvE9UxGlqyBMIjOT3KwkkN2+y86Ps7Qi/dZ5WQJJFFV7m74Hqc8tfQ0et8o9bg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.filter" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+
+"@mescius/wijmo.grid.transposed@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.transposed/-/wijmo.grid.transposed-5.20241.9.tgz#8047ca359acc5e7d01d7be0ab6ca94f6613952e1"
+  integrity sha512-crKkcm0paec/p5JfwrKOfNXW1/XoCg6432jaPeEux81IphMliqEDLZ5NsGStssVUNLMl9UEN0AJlB5umWG+V7A==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+
+"@mescius/wijmo.grid.transposedmultirow@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.transposedmultirow/-/wijmo.grid.transposedmultirow-5.20241.9.tgz#203c7856812bf695ce050902fe195436581c7b9c"
+  integrity sha512-+vOcXRsaGFCaxCeEn2JNeqwzh7hQ9JmA70x3LFclv6vrvF/OHm/ypj4ALd9LlyXA1d58yWwn27LFX+Gr9+WVNA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+
+"@mescius/wijmo.grid.xlsx@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid.xlsx/-/wijmo.grid.xlsx-5.20241.9.tgz#f4d580e99a513e4b682093b2c6e641f5a6e3cd68"
+  integrity sha512-uKPEWiKFZOx0O3dQBGFT7DNzvo0tgm28x2aB+HKNzsQ1PGEKeVkeYnScjfUMw6oGawsYkZvJsV0dtlUd8aKUcg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.detail" "5.20241.9"
+    "@mescius/wijmo.grid.multirow" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+    "@mescius/wijmo.xlsx" "5.20241.9"
+
+"@mescius/wijmo.grid@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.grid/-/wijmo.grid-5.20241.9.tgz#36a7c6a9dc7a4b744db84f77e43609fa709e2221"
+  integrity sha512-BsP/gTEFe0ObRsVXTweVe+Vm3zXOFBiJlM2fmqXXAQgp3zrSkqVRhsktED0LNp1rT+h4rnkLeYWzkni/DKyi+Q==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+
+"@mescius/wijmo.input@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.input/-/wijmo.input-5.20241.9.tgz#c7f35e682c6a5b2edfef83e9ca4ba857859a8ee6"
+  integrity sha512-s0exyt4CVOZjBPiG7N+cQgQFsxe75u3jtFopfExeS5Gj+r84MzTMJOUt/xVhqDtL3vRvgikbysihLuUxwjNJ1w==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+
+"@mescius/wijmo.interop.grid@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.interop.grid/-/wijmo.interop.grid-5.20241.9.tgz#3b98e360e80be639c7a1a8b7e6c22b452201aa7a"
+  integrity sha512-eI+2JrqMMvwaU5ue+Fcdz/97EmkpXSwQT2r0B3V52abNtFveGuY8NeCC6zMhbeGU2BoF8T8J67aLa29g6AAOyA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.detail" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+
+"@mescius/wijmo.meta@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.meta/-/wijmo.meta-5.20241.9.tgz#9425519dde4bdeeec4282c8fc23b22400aa6f522"
+  integrity sha512-HlsCxXcQhQiBp1GslJMcptlmuuy/JWrdSk9hekDQqd2EnZfLo68fuLOJpDHN3aR59z9X4YdZOWWQxs+a9tHGFw==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.barcode" "5.20241.9"
+    "@mescius/wijmo.barcode.common" "5.20241.9"
+    "@mescius/wijmo.barcode.composite" "5.20241.9"
+    "@mescius/wijmo.barcode.specialized" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+    "@mescius/wijmo.chart.analytics" "5.20241.9"
+    "@mescius/wijmo.chart.animation" "5.20241.9"
+    "@mescius/wijmo.chart.annotation" "5.20241.9"
+    "@mescius/wijmo.chart.finance" "5.20241.9"
+    "@mescius/wijmo.chart.finance.analytics" "5.20241.9"
+    "@mescius/wijmo.chart.hierarchical" "5.20241.9"
+    "@mescius/wijmo.chart.interaction" "5.20241.9"
+    "@mescius/wijmo.chart.map" "5.20241.9"
+    "@mescius/wijmo.chart.radar" "5.20241.9"
+    "@mescius/wijmo.chart.render" "5.20241.9"
+    "@mescius/wijmo.gauge" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.detail" "5.20241.9"
+    "@mescius/wijmo.grid.filter" "5.20241.9"
+    "@mescius/wijmo.grid.grouppanel" "5.20241.9"
+    "@mescius/wijmo.grid.multirow" "5.20241.9"
+    "@mescius/wijmo.grid.pdf" "5.20241.9"
+    "@mescius/wijmo.grid.search" "5.20241.9"
+    "@mescius/wijmo.grid.selector" "5.20241.9"
+    "@mescius/wijmo.grid.sheet" "5.20241.9"
+    "@mescius/wijmo.grid.transposed" "5.20241.9"
+    "@mescius/wijmo.grid.transposedmultirow" "5.20241.9"
+    "@mescius/wijmo.grid.xlsx" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+    "@mescius/wijmo.nav" "5.20241.9"
+    "@mescius/wijmo.odata" "5.20241.9"
+    "@mescius/wijmo.olap" "5.20241.9"
+    "@mescius/wijmo.pdf" "5.20241.9"
+    "@mescius/wijmo.viewer" "5.20241.9"
+    "@mescius/wijmo.xlsx" "5.20241.9"
+
+"@mescius/wijmo.nav@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.nav/-/wijmo.nav-5.20241.9.tgz#8e68b2596fb40938956f0713ec63acbd184c8c73"
+  integrity sha512-4DRnZgaOBjw0h5SvV11yXMLxZOAZ2SXyt4PlDbzHuOrNtQ2w+ERYv6QnMcbijNfKHTJv13CbvA/Xj5WgD99HgQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+
+"@mescius/wijmo.odata@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.odata/-/wijmo.odata-5.20241.9.tgz#70b5bbbc6006d92be3f3b9fa8d7d9a0f799ba2e9"
+  integrity sha512-JTkZsYbAEGmpg6KWeb5wSX7HotPqicdV45KB2NNoLMoMyiPwt9L4/tJgEA0vLJ9E/aaxQ+YXGXRFg/vZyjiD4Q==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.filter" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+
+"@mescius/wijmo.olap@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.olap/-/wijmo.olap-5.20241.9.tgz#c31576ef828cf1c18385989104b0a58344d9c833"
+  integrity sha512-LJ4tkKJfPgjjtFMu/NeRipvTH1rA8Sf3GuT56bWcC74NQ+CewMd2NGPWLfIf8aOzAwPxVHaSePG2ytuXr3qMwA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.filter" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+
+"@mescius/wijmo.pdf.security@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.pdf.security/-/wijmo.pdf.security-5.20241.9.tgz#753841da075bed695a42626e5ffc113be372d0b2"
+  integrity sha512-QdUrusQniadTq+2PuxqTzPTNF+HbHizc8b0ioSCyzhhcZGOo7yRCMp3uDHomuBkXxlcja56SnBoZzhuvdtBllA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+
+"@mescius/wijmo.pdf@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.pdf/-/wijmo.pdf-5.20241.9.tgz#eb0775dc71f965f5b3af885acf21ccde7850386c"
+  integrity sha512-kmU1baFnOql2EnIcT7WUixqnacgS2LeGcyC2djk3f/FGxln9H2h3HgTCme/PqYNPsIhY4BTYMs7xx5JzqivvLQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+
+"@mescius/wijmo.purejs.all@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.purejs.all/-/wijmo.purejs.all-5.20241.9.tgz#a0989973327ca1c993cd158b3a13a617bcf51c5e"
+  integrity sha512-K1ErG3dP8F3HbFs5AeGZiXgjMXXBVU8UX5hrAzK+n2t4vc6hh6ZGtPIeo8CnZPgofHPOj59/3FJtjGmFwVcdqg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.barcode" "5.20241.9"
+    "@mescius/wijmo.barcode.common" "5.20241.9"
+    "@mescius/wijmo.barcode.composite" "5.20241.9"
+    "@mescius/wijmo.barcode.specialized" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+    "@mescius/wijmo.chart.analytics" "5.20241.9"
+    "@mescius/wijmo.chart.animation" "5.20241.9"
+    "@mescius/wijmo.chart.annotation" "5.20241.9"
+    "@mescius/wijmo.chart.finance" "5.20241.9"
+    "@mescius/wijmo.chart.finance.analytics" "5.20241.9"
+    "@mescius/wijmo.chart.hierarchical" "5.20241.9"
+    "@mescius/wijmo.chart.interaction" "5.20241.9"
+    "@mescius/wijmo.chart.map" "5.20241.9"
+    "@mescius/wijmo.chart.radar" "5.20241.9"
+    "@mescius/wijmo.chart.render" "5.20241.9"
+    "@mescius/wijmo.chart.webgl" "5.20241.9"
+    "@mescius/wijmo.cloud" "5.20241.9"
+    "@mescius/wijmo.cultures" "5.20241.9"
+    "@mescius/wijmo.gauge" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.cellmaker" "5.20241.9"
+    "@mescius/wijmo.grid.detail" "5.20241.9"
+    "@mescius/wijmo.grid.filter" "5.20241.9"
+    "@mescius/wijmo.grid.grouppanel" "5.20241.9"
+    "@mescius/wijmo.grid.immutable" "5.20241.9"
+    "@mescius/wijmo.grid.multirow" "5.20241.9"
+    "@mescius/wijmo.grid.pdf" "5.20241.9"
+    "@mescius/wijmo.grid.search" "5.20241.9"
+    "@mescius/wijmo.grid.selector" "5.20241.9"
+    "@mescius/wijmo.grid.sheet" "5.20241.9"
+    "@mescius/wijmo.grid.transposed" "5.20241.9"
+    "@mescius/wijmo.grid.transposedmultirow" "5.20241.9"
+    "@mescius/wijmo.grid.xlsx" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+    "@mescius/wijmo.interop.grid" "5.20241.9"
+    "@mescius/wijmo.meta" "5.20241.9"
+    "@mescius/wijmo.nav" "5.20241.9"
+    "@mescius/wijmo.odata" "5.20241.9"
+    "@mescius/wijmo.olap" "5.20241.9"
+    "@mescius/wijmo.pdf" "5.20241.9"
+    "@mescius/wijmo.pdf.security" "5.20241.9"
+    "@mescius/wijmo.rest" "5.20241.9"
+    "@mescius/wijmo.styles" "5.20241.9"
+    "@mescius/wijmo.touch" "5.20241.9"
+    "@mescius/wijmo.undo" "5.20241.9"
+    "@mescius/wijmo.viewer" "5.20241.9"
+    "@mescius/wijmo.xlsx" "5.20241.9"
+
+"@mescius/wijmo.react.all@^5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.all/-/wijmo.react.all-5.20241.9.tgz#84fcdfebb7c80c4e83a6aeee7757c0da721b0110"
+  integrity sha512-cteGupDbpd2jqAmVHdPYcnDdtL2N7/PKPp4mKu3nNYgATiOvTvZN+CT2rEykIrBFQSQ94J0G0tkVWE/NWizwZQ==
+  dependencies:
+    "@mescius/wijmo.purejs.all" "5.20241.9"
+    "@mescius/wijmo.react.barcode.common" "5.20241.9"
+    "@mescius/wijmo.react.barcode.composite" "5.20241.9"
+    "@mescius/wijmo.react.barcode.specialized" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+    "@mescius/wijmo.react.chart" "5.20241.9"
+    "@mescius/wijmo.react.chart.analytics" "5.20241.9"
+    "@mescius/wijmo.react.chart.animation" "5.20241.9"
+    "@mescius/wijmo.react.chart.annotation" "5.20241.9"
+    "@mescius/wijmo.react.chart.finance" "5.20241.9"
+    "@mescius/wijmo.react.chart.finance.analytics" "5.20241.9"
+    "@mescius/wijmo.react.chart.hierarchical" "5.20241.9"
+    "@mescius/wijmo.react.chart.interaction" "5.20241.9"
+    "@mescius/wijmo.react.chart.map" "5.20241.9"
+    "@mescius/wijmo.react.chart.radar" "5.20241.9"
+    "@mescius/wijmo.react.gauge" "5.20241.9"
+    "@mescius/wijmo.react.grid" "5.20241.9"
+    "@mescius/wijmo.react.grid.detail" "5.20241.9"
+    "@mescius/wijmo.react.grid.filter" "5.20241.9"
+    "@mescius/wijmo.react.grid.grouppanel" "5.20241.9"
+    "@mescius/wijmo.react.grid.immutable" "5.20241.9"
+    "@mescius/wijmo.react.grid.multirow" "5.20241.9"
+    "@mescius/wijmo.react.grid.search" "5.20241.9"
+    "@mescius/wijmo.react.grid.sheet" "5.20241.9"
+    "@mescius/wijmo.react.grid.transposed" "5.20241.9"
+    "@mescius/wijmo.react.grid.transposedmultirow" "5.20241.9"
+    "@mescius/wijmo.react.input" "5.20241.9"
+    "@mescius/wijmo.react.nav" "5.20241.9"
+    "@mescius/wijmo.react.olap" "5.20241.9"
+    "@mescius/wijmo.react.viewer" "5.20241.9"
+
+"@mescius/wijmo.react.barcode.common@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.barcode.common/-/wijmo.react.barcode.common-5.20241.9.tgz#e26e65e728f597959331e86a80e35274ba8b9b3f"
+  integrity sha512-tGmarSky5MvqTT+Ppa8TS8wsEgVjYBxGa/uoJV7OaDUWM92MNr+H6tqw6MxDXwKwQcSfFDyybLHruaeKr1tvTg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.barcode.common" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.barcode.composite@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.barcode.composite/-/wijmo.react.barcode.composite-5.20241.9.tgz#4892568abfab286650a657a9af6a374625969093"
+  integrity sha512-h3FqIidyRG8deJoeKXOXPimdi1GPf2LtwwYIYdA0C8mWpCXWAx8ReELqwvmt+HdfwdV9/zzwazk53YdX7JqobA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.barcode.composite" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.barcode.specialized@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.barcode.specialized/-/wijmo.react.barcode.specialized-5.20241.9.tgz#7eab2b375d0917b5e421dafa4b22ee5804ac424a"
+  integrity sha512-dZSc/th5gKQredpPPRU6/viQXALzizcTDI2gJBDTp+CAbmS9cQGWgvqG1c9TCaMSaUT6o4SiByoopxXSLMrXEQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.barcode.specialized" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.base@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.base/-/wijmo.react.base-5.20241.9.tgz#02e80c8da90bfd051d2edefa219d9034a573bf5b"
+  integrity sha512-mlLT+SSwEP+LnArRDQj1M0djl4LIEeUskEsvg1J+xezMKq6mf6WMse5fgVZXcS9XFbqKSHnGgI5G/oX1QlhtkQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+
+"@mescius/wijmo.react.chart.analytics@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.chart.analytics/-/wijmo.react.chart.analytics-5.20241.9.tgz#35fac9581154f5a8ecabb410c7bed148e1266287"
+  integrity sha512-2qqnPoxkYxYS6gBqARjsmPVL6u3ZB03vQdNdxwGMiA51zJ8NXfAnIlEeZmCG/nquAhRZ1BVy4d4zZUNDU8G0Bg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart.analytics" "5.20241.9"
+
+"@mescius/wijmo.react.chart.animation@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.chart.animation/-/wijmo.react.chart.animation-5.20241.9.tgz#ac3ee54b18e8f12b14e504bd8f039782d8fa60e7"
+  integrity sha512-rmiBs3PFvkuKkWfXSNCJF/hFd2HGXVG06VWLoqfdxJlGEEqY38V9fUTBuOPaGsF4lndv8w6TP/Rz2TxgO8z58Q==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart.animation" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.chart.annotation@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.chart.annotation/-/wijmo.react.chart.annotation-5.20241.9.tgz#1df97431d707fc5e70615729acd0821833a0c4e6"
+  integrity sha512-ajFa4hF5lGI5r7vxWi3qaG1bilvt2o9ltqRLbNYbtJ7GdfzS8nnOFAH+dHAjexeDF6T5wVaJ8EKIcvi1jcQK4A==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart.annotation" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.chart.finance.analytics@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.chart.finance.analytics/-/wijmo.react.chart.finance.analytics-5.20241.9.tgz#82ddce35903c8bdd92a25c7fa087c9373a5f94d9"
+  integrity sha512-tJ9jsJHAvgw5lYpjO1p2Xw0hh0WJK7e6SZW4kCgp92bGypdN+L8Mp7CcOdrk9O5aqr25VD5xO3AP94NsfXcZrg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart.finance.analytics" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.chart.finance@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.chart.finance/-/wijmo.react.chart.finance-5.20241.9.tgz#307130d2f16f4043f95c507d40db72fe81a63e2f"
+  integrity sha512-6TydDD8lFtuuHNddIQKkwI4eQxANsWqSpY/DKHEL/0yZbBe78ctoVgh9gINMIvjPYJCZe17yNXbp8jvkyabbtg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart.finance" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.chart.hierarchical@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.chart.hierarchical/-/wijmo.react.chart.hierarchical-5.20241.9.tgz#703e69f6c080fcbe7bc923e6a0ebc1fd0f73826e"
+  integrity sha512-8ushTYVYPAD9d7kfqQ8H+Em/lD7VnilX/XvzQKxTXXtlZFBq7waQeGe35rZk5uwvn6OEPsK9MzbWI0dl21zIsg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart.hierarchical" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.chart.interaction@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.chart.interaction/-/wijmo.react.chart.interaction-5.20241.9.tgz#3a7a09595d192c9a07c14154bc4d3619865bf669"
+  integrity sha512-/9YpHFNiX5Ypow+Mse2YQW8EuILGY0G6UN3kDCr17JnistquVTHMJsDa+a+LprtBlxiXThCuURNsnHJIoroHBQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart.interaction" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.chart.map@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.chart.map/-/wijmo.react.chart.map-5.20241.9.tgz#ec0cbc5328e9d49cf09b8c53d7121e13f59a44b0"
+  integrity sha512-U5t/d4Ml92RC3AwWumxy1pqeYbksHuQf1fDERbHDCZbsXLCbcZfDljMPfc/fGDIiuN+zH6raBqOoc+kVHawdmQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart.map" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.chart.radar@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.chart.radar/-/wijmo.react.chart.radar-5.20241.9.tgz#0da4df2be21d3df0c1a4659ca08713ec52857908"
+  integrity sha512-rKNsir63dllUBAjovGM2ILcQ8f+yrnYCT5ANlkaLutofs/o1nvqN3HxL4CrUsrsshwDcMToG0QSzayOi5Ls/rA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart.radar" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.chart@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.chart/-/wijmo.react.chart-5.20241.9.tgz#72dcdb476b7e2166fd297bb4b5dbf4b5ff91b263"
+  integrity sha512-1l4hcexB5Xcu4g71WElGqBxvX4rinxiteF2/yrt6iL+BQRdbbmUg5Hagw8f6KtyKhJ/oIi9Nnr6oZ0j+AzdnNg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.chart" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.gauge@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.gauge/-/wijmo.react.gauge-5.20241.9.tgz#52bd16b6cc2bc69ce0192f656661f69cc8ca6184"
+  integrity sha512-+GwMqGUfP8mcpEZ8Q18CYx4bk+rrs3QnmkrMDH77BbWjkJ51iRb+hEncRYpDP4KNU60JYXfuV9jjRKgKrTFQbQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.gauge" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.grid.detail@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.grid.detail/-/wijmo.react.grid.detail-5.20241.9.tgz#6a7df4b42bbf3be7566d6c7bffe77b38f8e129d7"
+  integrity sha512-VwWjoLC2lb8yJoQ+l5ez4kkfzMWKb0RTBw/SeFkT9zMrkJ2W1d74+XjtucHgYbxg7L2lhikam0fkTxNvhdEVqA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.detail" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.grid.filter@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.grid.filter/-/wijmo.react.grid.filter-5.20241.9.tgz#8f918b38ab7d34e694edc648d25c1e1fc9db132f"
+  integrity sha512-xhllDPuqf0o67sFqS9PTPGHj7s5tNuVuEkl/wW4i/9r4nUZueDIB1PJB6zLuojPbmuPVQ2bBBtMN8XgWfC6iMg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid.filter" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.grid.grouppanel@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.grid.grouppanel/-/wijmo.react.grid.grouppanel-5.20241.9.tgz#34bd610e1a83b5d5c13822b99b3d3a912b6a300d"
+  integrity sha512-0KIromVqwZcmA15QUXhKHwAOwYJkxWzGtSwZTf2ZeVdJSoiAjVx/GIp6oBYvyzFRarpCOwZwFUNSqHHTPj4Evw==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid.grouppanel" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.grid.immutable@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.grid.immutable/-/wijmo.react.grid.immutable-5.20241.9.tgz#fa4da3807787842ff70fba51b736f275d6833e8d"
+  integrity sha512-+1khWl86X1rCoyr7VPAMCBRC94sqmahCXs5+qh1WhPamDi+LskSccITNu9+gK/K4h0xRUqGoRidlkKAyMXJ9EA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid.immutable" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.grid.multirow@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.grid.multirow/-/wijmo.react.grid.multirow-5.20241.9.tgz#ca6bee987724fd26cce23729a7bfe1e914067400"
+  integrity sha512-fB1b5UmXmVU3XtcVW55RWD0TR47phwE8NhA9Uhl3gLyyrgGFJcDTZE0iG+k9k5+737r09t5cnkKHvXzjblkMFQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.multirow" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.grid.search@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.grid.search/-/wijmo.react.grid.search-5.20241.9.tgz#c4e0c4140091888653f54ede676d8898a8362a13"
+  integrity sha512-PoPDjCjW3um0YpQiKwn8zQHFusMSmxTKx2/FgsSz6jOL6GvQJG6St90aDys0aErotE4npK0unywAWgGqGgUMMA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid.search" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.grid.sheet@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.grid.sheet/-/wijmo.react.grid.sheet-5.20241.9.tgz#5f729e9735eacbdba0088077d161167b2a4f0294"
+  integrity sha512-VoxUMRdTkOWl3BQBvNHm2BIwcOjmaw4+yioxaJQvMubfBJGuSbSZIWc4z0RhkScF3d9Ybzg4sxPfgrovDzxzUg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid.sheet" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.grid.transposed@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.grid.transposed/-/wijmo.react.grid.transposed-5.20241.9.tgz#e8c1d43073bf47171c2befa984db3754ad7357d7"
+  integrity sha512-ymaY4/rqR+M4tgTvZZQIuiad3d2aFS4gNITRmm4q3Ergn///7dDxoDlelZeM1C+iS4JSf19Vao97I5d5UuLDow==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid.transposed" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.grid.transposedmultirow@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.grid.transposedmultirow/-/wijmo.react.grid.transposedmultirow-5.20241.9.tgz#ffb8921b3d0d76fd7fa812095aff7ac1e5655e9f"
+  integrity sha512-3IKZwDXjQ3jcMQ1AMwz5TRTCxN7Gx79Ehf288ZNGbveICzI4hTUiMmM5m4GKWjlbc97lVL9Ng8ZLLTGFDCyjLw==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid.transposedmultirow" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.grid@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.grid/-/wijmo.react.grid-5.20241.9.tgz#2effcdec89671fd3fcb102aafc00179fd8245fa4"
+  integrity sha512-JrTq72aAmP7oksVTNPjLTruMZGTcR1bsSN7Bp2jN3+S635/Mbrq3PIjhoLkRU7lrESf3I9ZFL0KxtdK22GpjMA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.grid.detail" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+    "@mescius/wijmo.interop.grid" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.input@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.input/-/wijmo.react.input-5.20241.9.tgz#4023013143f33aca113c07912c7dbe0edf965c6a"
+  integrity sha512-PZ+U71CK12M1WsNOKnuIrwu61A9fyQJWjkTg6ATFN4w++Z+av0dbPx+gvYqceqH8JJzpK9DhzhQGhpTr01qFMg==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.nav@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.nav/-/wijmo.react.nav-5.20241.9.tgz#d6cfeff9dde7d1291111e737e7ad6eacfca3207c"
+  integrity sha512-/9suto9GK5h7lOMZHt83afmAgckUQtlDBHGTx6SpeUpnKVo39h8U2QGsKmAELA0z24muBmlLyAYmFYkX592GyQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.nav" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.olap@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.olap/-/wijmo.react.olap-5.20241.9.tgz#21ef6ad63ad8f55bf8c5fdcb0522f455dbae93df"
+  integrity sha512-qg29tPZHL+rhzkEaossI7Bseb5aMpzvfZ7ghhNJNKWdHJRGauYr0f+TAUKTd5hpxGrtjGX80aMVZB953bQ9Ixw==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.olap" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+
+"@mescius/wijmo.react.viewer@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.react.viewer/-/wijmo.react.viewer-5.20241.9.tgz#d1993976a7daa0dbe61b03344ea41d389461bede"
+  integrity sha512-l94633Fwgj201S90aubF1delMCBLV9xz6NNCVQXBjGMonUezUg3IU+IZHWcl2K+uRqdOEqFGgNljTXo7/lq5aQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.react.base" "5.20241.9"
+    "@mescius/wijmo.viewer" "5.20241.9"
+
+"@mescius/wijmo.rest@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.rest/-/wijmo.rest-5.20241.9.tgz#4c13f76ea59d18db092b262de429c43a454f4eab"
+  integrity sha512-AS2q2hCmyCKrC/iwMzEcPe/MeWAVv7SFMnT/GYk1MWqTzl8yv2t/GqMLa8cD1MnrTYFa+juyZ3ywNxZheeG54w==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+
+"@mescius/wijmo.styles@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.styles/-/wijmo.styles-5.20241.9.tgz#32ec5498798c12acb4d60b62408e7524b2641b10"
+  integrity sha512-oZKGD7mSthLB3/xjAWicRDM/mK2ub9Ds+aYHWweZ7/k5kaiDsgTqFl1t0GcKGk9sNTHUUoH3UEv7zXVFc3NqOQ==
+
+"@mescius/wijmo.touch@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.touch/-/wijmo.touch-5.20241.9.tgz#9227597ae305d12e9ee2c8ea372a6e648eaeeaa1"
+  integrity sha512-CQOVvViM9u3hcaSVS4wES3Fa76jDIXabkSy4Wcv1EzwJcRYfVzsV9QvTCOSHvZoNheQg5PCMez2ZHpq/ldUN3Q==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+
+"@mescius/wijmo.undo@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.undo/-/wijmo.undo-5.20241.9.tgz#0dfb24aebcc7ce5591a25677ce6047e7fc8d9a1c"
+  integrity sha512-cD8SggicfKN06OP69rbwwEyt/iRmEsShejSPLB5GE9Ueec+xDPsZgxQAM3atxrg/YTW4MFKxWWDXClcnftfhcQ==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.gauge" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+    "@mescius/wijmo.nav" "5.20241.9"
+
+"@mescius/wijmo.viewer@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.viewer/-/wijmo.viewer-5.20241.9.tgz#2aaecd6f555fa60a76bb2a168d6c056cd6b0da5d"
+  integrity sha512-XaMnGvKgmWoqeKFuZvevZBOXIv4zwKy9LNhtKRi5J8o1ymWiPTunY7/iEmDJK256iEwV59t7KH/d8GaFa2AnBA==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+    "@mescius/wijmo.grid" "5.20241.9"
+    "@mescius/wijmo.input" "5.20241.9"
+
+"@mescius/wijmo.xlsx@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo.xlsx/-/wijmo.xlsx-5.20241.9.tgz#77ed89f2606848ecf1c4b21f7863cb8490322d87"
+  integrity sha512-1FGJYg1s4r/1vI/lPr8OFU3lakvdSFB0bkZZyz/s4D1/+nYUONMxa6DhfN40UVIsp551vSTc9p3TIJuXJOvE9Q==
+  dependencies:
+    "@mescius/wijmo" "5.20241.9"
+
+"@mescius/wijmo@5.20241.9":
+  version "5.20241.9"
+  resolved "https://registry.yarnpkg.com/@mescius/wijmo/-/wijmo-5.20241.9.tgz#236ac6684d33f25c739c518ddd0721f959fa915e"
+  integrity sha512-UQ+HdHVRovRE8dKK+MOOMdAcB13rBdXRQdjkXiuhmEo2e9OxOZlQ0Gk45wfMy0TUyyii61jSdw4X1BWTgCCbqw==
+  dependencies:
+    "@mescius/wijmo.styles" "5.20241.9"
+
 "@next/env@14.2.3":
   version "14.2.3"
   resolved "https://registry.npmjs.org/@next/env/-/env-14.2.3.tgz"
@@ -2098,6 +2886,11 @@ react-hook-form@^7.51.4:
   version "7.51.4"
   resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.51.4.tgz"
   integrity sha512-V14i8SEkh+V1gs6YtD0hdHYnoL4tp/HX/A45wWQN15CYr9bFRmmRdYStSO5L65lCCZRF+kYiSKhm9alqbcdiVA==
+
+react-icons@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.2.1.tgz#28c2040917b2a2eda639b0f797bff1888e018e4a"
+  integrity sha512-zdbW5GstTzXaVKvGSyTaBalt7HSfuK5ovrzlpyiWHAFXndXTdd/1hdDHI4xBM1Mn7YriT6aqESucFl9kEXzrdw==
 
 react-is@^16.13.1:
   version "16.13.1"
