@@ -10,6 +10,9 @@ COPY package.json package-lock.json ./
 # 依存関係をインストール
 RUN yarn install
 
+# gitをインストール
+RUN apt-get update && apt-get install -y git
+
 # アプリケーションのソースコードをコピー
 COPY . .
 
