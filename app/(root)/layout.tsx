@@ -3,6 +3,8 @@ import { useState } from "react";
 import "../globals.css";
 import "@mescius/wijmo.styles/wijmo.css";
 import Header from "@/components/Header/Header";
+import { DialogProvider } from "@/context/dialogContext";
+import { ToastProvider } from "@/context/ToastContext";
 
 export default function RootLayout({
   children,
@@ -20,7 +22,9 @@ export default function RootLayout({
           }`}
           style={{ width: isNavOpen ? "calc(100% - 16rem)" : "100%" }}
         >
-          {children}
+          <DialogProvider>
+            <ToastProvider>{children}</ToastProvider>
+          </DialogProvider>
         </main>
       </body>
     </html>

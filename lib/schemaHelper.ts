@@ -22,3 +22,7 @@ export type ResponseData<
   Path extends UrlPaths,
   Method extends HttpMethods,
 > = Get<paths, `${Path}.${Method}.responses.200.content.application/json`>;
+
+export type Query<Path extends UrlPaths> = NonNullable<
+  RequestParameters<Path, "get">
+>;
