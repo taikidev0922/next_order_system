@@ -358,12 +358,12 @@ paths:
               schema:
                 $ref: "#/components/schemas/Customer"
           description: ""
-  /api/customers/{customer_id}/:
+  /api/customers/{id}/:
     get:
       operationId: customers_retrieve
       parameters:
         - in: path
-          name: customer_id
+          name: id
           schema:
             type: integer
           description: A unique integer value identifying this customer.
@@ -383,7 +383,7 @@ paths:
       operationId: customers_update
       parameters:
         - in: path
-          name: customer_id
+          name: id
           schema:
             type: integer
           description: A unique integer value identifying this customer.
@@ -415,7 +415,7 @@ paths:
       operationId: customers_partial_update
       parameters:
         - in: path
-          name: customer_id
+          name: id
           schema:
             type: integer
           description: A unique integer value identifying this customer.
@@ -446,7 +446,7 @@ paths:
       operationId: customers_destroy
       parameters:
         - in: path
-          name: customer_id
+          name: id
           schema:
             type: integer
           description: A unique integer value identifying this customer.
@@ -461,24 +461,56 @@ paths:
   /api/customers/bulk_update/:
     put:
       operationId: customers_bulk_update_update
+      parameters:
+        - in: query
+          name: address
+          schema:
+            type: string
+        - in: query
+          name: deleted_at
+          schema:
+            type: string
+            format: date-time
+        - in: query
+          name: name
+          schema:
+            type: string
+        - in: query
+          name: phone
+          schema:
+            type: string
       tags:
         - customers
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Customer"
+              type: array
+              items:
+                $ref: "#/components/schemas/Customer"
           application/x-www-form-urlencoded:
             schema:
-              $ref: "#/components/schemas/Customer"
+              type: array
+              items:
+                $ref: "#/components/schemas/Customer"
           multipart/form-data:
             schema:
-              $ref: "#/components/schemas/Customer"
+              type: array
+              items:
+                $ref: "#/components/schemas/Customer"
         required: true
       security:
         - jwtAuth: []
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Customer"
+          description: ""
+        "400":
           content:
             application/json:
               schema:
@@ -525,12 +557,12 @@ paths:
               schema:
                 $ref: "#/components/schemas/Order"
           description: ""
-  /api/orders/{order_id}/:
+  /api/orders/{id}/:
     get:
       operationId: orders_retrieve
       parameters:
         - in: path
-          name: order_id
+          name: id
           schema:
             type: integer
           description: A unique integer value identifying this order.
@@ -550,7 +582,7 @@ paths:
       operationId: orders_update
       parameters:
         - in: path
-          name: order_id
+          name: id
           schema:
             type: integer
           description: A unique integer value identifying this order.
@@ -582,7 +614,7 @@ paths:
       operationId: orders_partial_update
       parameters:
         - in: path
-          name: order_id
+          name: id
           schema:
             type: integer
           description: A unique integer value identifying this order.
@@ -613,7 +645,7 @@ paths:
       operationId: orders_destroy
       parameters:
         - in: path
-          name: order_id
+          name: id
           schema:
             type: integer
           description: A unique integer value identifying this order.
@@ -666,12 +698,12 @@ paths:
               schema:
                 $ref: "#/components/schemas/Product"
           description: ""
-  /api/products/{product_id}/:
+  /api/products/{id}/:
     get:
       operationId: products_retrieve
       parameters:
         - in: path
-          name: product_id
+          name: id
           schema:
             type: integer
           description: A unique integer value identifying this product.
@@ -691,7 +723,7 @@ paths:
       operationId: products_update
       parameters:
         - in: path
-          name: product_id
+          name: id
           schema:
             type: integer
           description: A unique integer value identifying this product.
@@ -723,7 +755,7 @@ paths:
       operationId: products_partial_update
       parameters:
         - in: path
-          name: product_id
+          name: id
           schema:
             type: integer
           description: A unique integer value identifying this product.
@@ -754,7 +786,7 @@ paths:
       operationId: products_destroy
       parameters:
         - in: path
-          name: product_id
+          name: id
           schema:
             type: integer
           description: A unique integer value identifying this product.
@@ -771,7 +803,7 @@ components:
     Customer:
       type: object
       properties:
-        customer_id:
+        id:
           type: integer
           readOnly: true
         cookie:
@@ -791,7 +823,7 @@ components:
           nullable: true
       required:
         - address
-        - customer_id
+        - id
         - name
         - phone
     JWT:
@@ -823,7 +855,7 @@ components:
     Order:
       type: object
       properties:
-        order_id:
+        id:
           type: integer
           readOnly: true
         items:
@@ -838,13 +870,13 @@ components:
           type: integer
       required:
         - customer
+        - id
         - items
         - order_date
-        - order_id
     OrderItem:
       type: object
       properties:
-        order_item_id:
+        id:
           type: integer
           readOnly: true
         quantity:
@@ -860,8 +892,8 @@ components:
         product:
           type: integer
       required:
+        - id
         - order
-        - order_item_id
         - price
         - product
         - quantity
@@ -908,7 +940,7 @@ components:
     PatchedCustomer:
       type: object
       properties:
-        customer_id:
+        id:
           type: integer
           readOnly: true
         cookie:
@@ -929,7 +961,7 @@ components:
     PatchedOrder:
       type: object
       properties:
-        order_id:
+        id:
           type: integer
           readOnly: true
         items:
@@ -945,7 +977,7 @@ components:
     PatchedProduct:
       type: object
       properties:
-        product_id:
+        id:
           type: integer
           readOnly: true
         name:
@@ -986,7 +1018,7 @@ components:
     Product:
       type: object
       properties:
-        product_id:
+        id:
           type: integer
           readOnly: true
         name:
@@ -1000,9 +1032,9 @@ components:
           pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
       required:
         - description
+        - id
         - name
         - price
-        - product_id
     RestAuthDetail:
       type: object
       properties:

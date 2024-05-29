@@ -1,6 +1,7 @@
 "use client";
 import { components } from "@/schema";
 import { createContext, useContext, useState } from "react";
+import Cookies from "js-cookie";
 
 type User = components["schemas"]["UserDetails"];
 
@@ -22,10 +23,10 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 const setToken = (token: string) => {
-  localStorage.setItem("token", token);
+  Cookies.set("token", token, { expires: 7 }); // 7日間有効
 };
 export const getToken = () => {
-  return localStorage.getItem("token");
+  return Cookies.get("token");
 };
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {

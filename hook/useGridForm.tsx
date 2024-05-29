@@ -1,15 +1,11 @@
 "use client";
 import { GridColumn } from "@/types/GridColumn";
 import { useState } from "react";
-import { FlexGrid } from "@mescius/wijmo.grid";
+import { FlexGrid, KeyAction } from "@mescius/wijmo.grid";
 import { CellMaker } from "@mescius/wijmo.grid.cellmaker";
 import _assign from "lodash/assign";
 import { useDialogContext } from "@/context/dialogContext";
-import ResultsView from "@/components/ResultsView/ResultsView";
-import { render } from "react-dom";
-import { createRoot } from "react-dom/client";
-import { createHtmlFromComponent } from "@/utils/createHtmlFromComponent";
-import Icon from "@/components/Icon/Icon";
+import { getIcon } from "@/utils/getIcon";
 
 export function useGridForm({ columns }: { columns: GridColumn[] }) {
   const [itemsSource, setItemsSource] = useState<any[]>([]);
@@ -21,6 +17,7 @@ export function useGridForm({ columns }: { columns: GridColumn[] }) {
       header: " ",
       dataType: "boolean",
       width: 35,
+      cssClass: "wj-header",
     },
     {
       binding: "operation",
@@ -28,6 +25,7 @@ export function useGridForm({ columns }: { columns: GridColumn[] }) {
       dataType: "string",
       width: 35,
       isReadOnly: true,
+      cssClass: "wj-header",
       cellTemplate(ctx, cell) {
         if (!cell) return "";
         cell.style.color = "white";
@@ -49,15 +47,16 @@ export function useGridForm({ columns }: { columns: GridColumn[] }) {
       binding: "results",
       header: " ",
       dataType: "string",
-      width: 30,
+      width: 35,
+      cssClass: "wj-header",
       cellTemplate(ctx, cell) {
         if (!ctx.item.results || ctx.item.results.length === 0) return "";
-        const icon = createHtmlFromComponent(<Icon />);
-        console.log(icon);
         return CellMaker.makeButton({
-          text: ctx.item.results.some((result) => result.type === "error")
-            ? icon
-            : "w",
+          text: getIcon(
+            ctx.item.results.some((result) => result.type === "error")
+              ? "error"
+              : "warning",
+          ),
           click(clickCell, clickCtx) {
             showResultsDialog(clickCtx.item.results);
           },
@@ -84,6 +83,8 @@ export function useGridForm({ columns }: { columns: GridColumn[] }) {
   const onInit = (flexGrid: FlexGrid) => {
     setGrid(flexGrid);
     setItemsSource(Array.from({ length: 10 }, () => ({})));
+    flexGrid.keyActionEnter = KeyAction.CycleEditable;
+    flexGrid.keyActionTab = KeyAction.CycleEditable;
     flexGrid?.itemsSourceChanged.addHandler(() => {
       flexGrid.deferUpdate(() => {
         flexGrid.collectionView.items.forEach((item) => {
@@ -96,6 +97,29 @@ export function useGridForm({ columns }: { columns: GridColumn[] }) {
       flexGrid.beginUpdate();
       flexGrid.collectionView.items[args.row].isSelected = true;
       flexGrid.endUpdate();
+    });
+    flexGrid.selectionChanged.addHandler((_, args) => {
+      if (args.col === 0) {
+        flexGrid.select(args.row, 3);
+      }
+    });
+    flexGrid.hostElement.addEventListener("keydown", (e) => {
+      if (
+        e.shiftKey &&
+        (e.key === "Enter" || e.key === "Tab") &&
+        flexGrid.selection.col === 2
+      ) {
+        flexGrid.select(flexGrid.selection.row - 1, columns.length + 2);
+      }
+      if (e.key === "ArrowLeft" && flexGrid.selection.col === 2) {
+        flexGrid.select(flexGrid.selection.row, 3);
+      }
+    });
+    flexGrid.hostElement.addEventListener("click", (e) => {
+      const hit = flexGrid.hitTest(e);
+      if (hit.col === 0 || hit.col === 1 || hit.col === 2) {
+        flexGrid.select(hit.row, 3);
+      }
     });
   };
 

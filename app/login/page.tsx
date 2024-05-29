@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { request } from "../../lib/axiosUtils";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
 
 const schema = yup
   .object({
@@ -19,6 +20,7 @@ type InputType = {
 
 export default function App() {
   const router = useRouter();
+  const { login } = useAuth();
   const {
     register,
     handleSubmit,
@@ -32,7 +34,7 @@ export default function App() {
       method: "post",
       data: data,
     });
-    localStorage.setItem("token", res.data?.access_token);
+    login(res.data.user, res.data.refresh_token);
     router.push("/");
   };
 

@@ -9,22 +9,24 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useGridForm } from "@/hook/useGridForm";
 import { useDialogContext } from "@/context/dialogContext";
 import { useToastContext } from "@/context/ToastContext";
+import TextInput from "@/components/TextInput/TextInput";
+import Button from "@/components/Button/Button";
 type CustomerQuery = Query<"/api/customers/">;
 export default function Page() {
   const { showDialog } = useDialogContext();
   const { showToast } = useToastContext();
   const schema = yup
     .object({
-      name: yup.string().optional(),
-      address: yup.string().optional(),
-      phone: yup.string().optional(),
+      name: yup.string().label("得意先名").optional(),
+      address: yup.string().label("住所").optional(),
+      phone: yup.string().label("電話番号").optional().max(11),
     })
     .required();
 
   const {
-    register,
     handleSubmit,
     formState: { errors },
+    control,
   } = useForm<CustomerQuery>({
     resolver: yupResolver(schema),
   });
@@ -92,15 +94,27 @@ export default function Page() {
         <input type="radio" />
         <label>参照</label>
       </div>
-      <form onSubmit={handleSubmit(search)}>
-        <div className="flex border border-gray-300">
-          <label>得意先名</label>
-          <input {...register("name")} />
-          <label>住所</label>
-          <input {...register("address")} />
-          <label>電話番号</label>
-          <input {...register("phone")} />
-          <button type="submit">検索</button>
+      <form onSubmit={handleSubmit(search)} noValidate>
+        <div className="flex border border-gray-300 items-center gap-3">
+          <TextInput
+            control={control}
+            name="name"
+            label="得意先名"
+            errors={errors}
+          />
+          <TextInput
+            control={control}
+            name="address"
+            label="住所"
+            errors={errors}
+          />
+          <TextInput
+            control={control}
+            name="phone"
+            label="電話番号"
+            errors={errors}
+          />
+          <Button text="検索" />
         </div>
       </form>
       <div className="border border-gray-300">

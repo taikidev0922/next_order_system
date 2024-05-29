@@ -5,5 +5,6 @@ export type GridColumn = {
   dataType: "string" | "number" | "boolean" | "date";
   isReadOnly?: boolean;
   width?: number;
+  cssClass?: string;
   cellTemplate?: ICellTemplateFunction;
 };

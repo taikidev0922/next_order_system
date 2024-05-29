@@ -108,7 +108,7 @@ export interface paths {
     get: operations["customers_list"];
     post: operations["customers_create"];
   };
-  "/api/customers/{customer_id}/": {
+  "/api/customers/{id}/": {
     get: operations["customers_retrieve"];
     put: operations["customers_update"];
     delete: operations["customers_destroy"];
@@ -121,7 +121,7 @@ export interface paths {
     get: operations["orders_list"];
     post: operations["orders_create"];
   };
-  "/api/orders/{order_id}/": {
+  "/api/orders/{id}/": {
     get: operations["orders_retrieve"];
     put: operations["orders_update"];
     delete: operations["orders_destroy"];
@@ -131,7 +131,7 @@ export interface paths {
     get: operations["products_list"];
     post: operations["products_create"];
   };
-  "/api/products/{product_id}/": {
+  "/api/products/{id}/": {
     get: operations["products_retrieve"];
     put: operations["products_update"];
     delete: operations["products_destroy"];
@@ -144,7 +144,7 @@ export type webhooks = Record<string, never>;
 export interface components {
   schemas: {
     Customer: {
-      customer_id: number;
+      id: number;
       cookie?: number;
       name: string;
       address: string;
@@ -165,14 +165,14 @@ export interface components {
       password: string;
     };
     Order: {
-      order_id: number;
+      id: number;
       items: components["schemas"]["OrderItem"][];
       /** Format: date-time */
       order_date: string;
       customer: number;
     };
     OrderItem: {
-      order_item_id: number;
+      id: number;
       quantity: number;
       /** Format: decimal */
       price: string;
@@ -196,7 +196,7 @@ export interface components {
       token: string;
     };
     PatchedCustomer: {
-      customer_id?: number;
+      id?: number;
       cookie?: number;
       name?: string;
       address?: string;
@@ -205,14 +205,14 @@ export interface components {
       deleted_at?: string | null;
     };
     PatchedOrder: {
-      order_id?: number;
+      id?: number;
       items?: components["schemas"]["OrderItem"][];
       /** Format: date-time */
       order_date?: string;
       customer?: number;
     };
     PatchedProduct: {
-      product_id?: number;
+      id?: number;
       name?: string;
       description?: string;
       /** Format: decimal */
@@ -233,7 +233,7 @@ export interface components {
       last_name?: string;
     };
     Product: {
-      product_id: number;
+      id: number;
       name: string;
       description: string;
       /** Format: decimal */
@@ -533,7 +533,7 @@ export interface operations {
     parameters: {
       path: {
         /** @description A unique integer value identifying this customer. */
-        customer_id: number;
+        id: number;
       };
     };
     responses: {
@@ -548,7 +548,7 @@ export interface operations {
     parameters: {
       path: {
         /** @description A unique integer value identifying this customer. */
-        customer_id: number;
+        id: number;
       };
     };
     requestBody: {
@@ -570,7 +570,7 @@ export interface operations {
     parameters: {
       path: {
         /** @description A unique integer value identifying this customer. */
-        customer_id: number;
+        id: number;
       };
     };
     responses: {
@@ -584,7 +584,7 @@ export interface operations {
     parameters: {
       path: {
         /** @description A unique integer value identifying this customer. */
-        customer_id: number;
+        id: number;
       };
     };
     requestBody?: {
@@ -603,15 +603,28 @@ export interface operations {
     };
   };
   customers_bulk_update_update: {
+    parameters: {
+      query?: {
+        address?: string;
+        deleted_at?: string;
+        name?: string;
+        phone?: string;
+      };
+    };
     requestBody: {
       content: {
-        "application/json": components["schemas"]["Customer"];
-        "application/x-www-form-urlencoded": components["schemas"]["Customer"];
-        "multipart/form-data": components["schemas"]["Customer"];
+        "application/json": components["schemas"]["Customer"][];
+        "application/x-www-form-urlencoded": components["schemas"]["Customer"][];
+        "multipart/form-data": components["schemas"]["Customer"][];
       };
     };
     responses: {
       200: {
+        content: {
+          "application/json": components["schemas"]["Customer"][];
+        };
+      };
+      400: {
         content: {
           "application/json": components["schemas"]["Customer"];
         };
@@ -647,7 +660,7 @@ export interface operations {
     parameters: {
       path: {
         /** @description A unique integer value identifying this order. */
-        order_id: number;
+        id: number;
       };
     };
     responses: {
@@ -662,7 +675,7 @@ export interface operations {
     parameters: {
       path: {
         /** @description A unique integer value identifying this order. */
-        order_id: number;
+        id: number;
       };
     };
     requestBody: {
@@ -684,7 +697,7 @@ export interface operations {
     parameters: {
       path: {
         /** @description A unique integer value identifying this order. */
-        order_id: number;
+        id: number;
       };
     };
     responses: {
@@ -698,7 +711,7 @@ export interface operations {
     parameters: {
       path: {
         /** @description A unique integer value identifying this order. */
-        order_id: number;
+        id: number;
       };
     };
     requestBody?: {
@@ -745,7 +758,7 @@ export interface operations {
     parameters: {
       path: {
         /** @description A unique integer value identifying this product. */
-        product_id: number;
+        id: number;
       };
     };
     responses: {
@@ -760,7 +773,7 @@ export interface operations {
     parameters: {
       path: {
         /** @description A unique integer value identifying this product. */
-        product_id: number;
+        id: number;
       };
     };
     requestBody: {
@@ -782,7 +795,7 @@ export interface operations {
     parameters: {
       path: {
         /** @description A unique integer value identifying this product. */
-        product_id: number;
+        id: number;
       };
     };
     responses: {
@@ -796,7 +809,7 @@ export interface operations {
     parameters: {
       path: {
         /** @description A unique integer value identifying this product. */
-        product_id: number;
+        id: number;
       };
     };
     requestBody?: {

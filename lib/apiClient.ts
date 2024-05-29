@@ -1,4 +1,5 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const apiClient = axios.create({
   baseURL: "http://localhost:8000",
@@ -10,7 +11,7 @@ const apiClient = axios.create({
 
 apiClient.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token");
+    const token = Cookies.get("token");
     if (token && config.url && !config.url.includes("/login")) {
       config.headers.Authorization = `JWT ${token}`;
     }
@@ -24,7 +25,7 @@ apiClient.interceptors.response.use(
   (error) => {
     if (error.response && error.response.status === 401) {
       alert("認証に失敗しました。ログイン画面に遷移します。");
-      localStorage.removeItem("token");
+      Cookies.remove("token");
       window.location.href = "/login";
     }
     return Promise.reject(error);
