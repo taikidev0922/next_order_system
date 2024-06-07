@@ -12,3 +12,9 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    external: true

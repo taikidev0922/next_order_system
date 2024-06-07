@@ -7,7 +7,7 @@ type Props = {
   errors: any;
   label: string;
   className?: string;
-  inputType?: "text";
+  inputType?: "text" | "password";
 };
 export default function TextInput({
   control,
@@ -36,7 +36,7 @@ export default function TextInput({
             />
           )}
         />
-        <div className="h-6 text-red-500">
+        <div className="h-4 text-red-500">
           {errors[name] && <span role="alert">{errors[name].message}</span>}
         </div>
       </div>

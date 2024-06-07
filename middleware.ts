@@ -1,25 +1,17 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { request as axiosRequest } from "@/lib/axiosUtils";
 
+// This function can be marked `async` if using `await` inside
 export async function middleware(request: NextRequest) {
-  const token = request.cookies.get("token");
-  fetch("http://web:8000/api/auth/user/", {
-    method: "get",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log("エラー発生！！！", err);
-    });
+  const isLoggedIn = request.cookies.get("token")?.value;
+  if (!isLoggedIn) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
 
-  // return NextResponse.redirect(new URL(request.url).origin);
+  return NextResponse.next();
 }
 
+// See "Matching Paths" below to learn more
 export const config = {
-  matcher: "/:path*",
+  matcher: "/order_system/:path*",
 };

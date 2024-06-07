@@ -106,36 +106,9 @@ export interface paths {
   };
   "/api/customers/": {
     get: operations["customers_list"];
-    post: operations["customers_create"];
   };
-  "/api/customers/{id}/": {
-    get: operations["customers_retrieve"];
-    put: operations["customers_update"];
-    delete: operations["customers_destroy"];
-    patch: operations["customers_partial_update"];
-  };
-  "/api/customers/bulk_update/": {
+  "/api/customers/bulk-update/": {
     put: operations["customers_bulk_update_update"];
-  };
-  "/api/orders/": {
-    get: operations["orders_list"];
-    post: operations["orders_create"];
-  };
-  "/api/orders/{id}/": {
-    get: operations["orders_retrieve"];
-    put: operations["orders_update"];
-    delete: operations["orders_destroy"];
-    patch: operations["orders_partial_update"];
-  };
-  "/api/products/": {
-    get: operations["products_list"];
-    post: operations["products_create"];
-  };
-  "/api/products/{id}/": {
-    get: operations["products_retrieve"];
-    put: operations["products_update"];
-    delete: operations["products_destroy"];
-    patch: operations["products_partial_update"];
   };
 }
 
@@ -145,12 +118,9 @@ export interface components {
   schemas: {
     Customer: {
       id: number;
-      cookie?: number;
       name: string;
       address: string;
       phone: string;
-      /** Format: date-time */
-      deleted_at?: string | null;
     };
     /** @description Serializer for JWT authentication. */
     JWT: {
@@ -163,21 +133,6 @@ export interface components {
       /** Format: email */
       email?: string;
       password: string;
-    };
-    Order: {
-      id: number;
-      items: components["schemas"]["OrderItem"][];
-      /** Format: date-time */
-      order_date: string;
-      customer: number;
-    };
-    OrderItem: {
-      id: number;
-      quantity: number;
-      /** Format: decimal */
-      price: string;
-      order: number;
-      product: number;
     };
     PasswordChange: {
       new_password1: string;
@@ -195,29 +150,6 @@ export interface components {
       uid: string;
       token: string;
     };
-    PatchedCustomer: {
-      id?: number;
-      cookie?: number;
-      name?: string;
-      address?: string;
-      phone?: string;
-      /** Format: date-time */
-      deleted_at?: string | null;
-    };
-    PatchedOrder: {
-      id?: number;
-      items?: components["schemas"]["OrderItem"][];
-      /** Format: date-time */
-      order_date?: string;
-      customer?: number;
-    };
-    PatchedProduct: {
-      id?: number;
-      name?: string;
-      description?: string;
-      /** Format: decimal */
-      price?: string;
-    };
     /** @description User model w/o password */
     PatchedUserDetails: {
       /** ID */
@@ -231,13 +163,6 @@ export interface components {
       email?: string;
       first_name?: string;
       last_name?: string;
-    };
-    Product: {
-      id: number;
-      name: string;
-      description: string;
-      /** Format: decimal */
-      price: string;
     };
     RestAuthDetail: {
       detail: string;
@@ -497,14 +422,6 @@ export interface operations {
     };
   };
   customers_list: {
-    parameters: {
-      query?: {
-        address?: string;
-        deleted_at?: string;
-        name?: string;
-        phone?: string;
-      };
-    };
     responses: {
       200: {
         content: {
@@ -513,104 +430,7 @@ export interface operations {
       };
     };
   };
-  customers_create: {
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["Customer"];
-        "application/x-www-form-urlencoded": components["schemas"]["Customer"];
-        "multipart/form-data": components["schemas"]["Customer"];
-      };
-    };
-    responses: {
-      201: {
-        content: {
-          "application/json": components["schemas"]["Customer"];
-        };
-      };
-    };
-  };
-  customers_retrieve: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this customer. */
-        id: number;
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Customer"];
-        };
-      };
-    };
-  };
-  customers_update: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this customer. */
-        id: number;
-      };
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["Customer"];
-        "application/x-www-form-urlencoded": components["schemas"]["Customer"];
-        "multipart/form-data": components["schemas"]["Customer"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Customer"];
-        };
-      };
-    };
-  };
-  customers_destroy: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this customer. */
-        id: number;
-      };
-    };
-    responses: {
-      /** @description No response body */
-      204: {
-        content: never;
-      };
-    };
-  };
-  customers_partial_update: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this customer. */
-        id: number;
-      };
-    };
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["PatchedCustomer"];
-        "application/x-www-form-urlencoded": components["schemas"]["PatchedCustomer"];
-        "multipart/form-data": components["schemas"]["PatchedCustomer"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Customer"];
-        };
-      };
-    };
-  };
   customers_bulk_update_update: {
-    parameters: {
-      query?: {
-        address?: string;
-        deleted_at?: string;
-        name?: string;
-        phone?: string;
-      };
-    };
     requestBody: {
       content: {
         "application/json": components["schemas"]["Customer"][];
@@ -622,207 +442,6 @@ export interface operations {
       200: {
         content: {
           "application/json": components["schemas"]["Customer"][];
-        };
-      };
-      400: {
-        content: {
-          "application/json": components["schemas"]["Customer"];
-        };
-      };
-    };
-  };
-  orders_list: {
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Order"][];
-        };
-      };
-    };
-  };
-  orders_create: {
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["Order"];
-        "application/x-www-form-urlencoded": components["schemas"]["Order"];
-        "multipart/form-data": components["schemas"]["Order"];
-      };
-    };
-    responses: {
-      201: {
-        content: {
-          "application/json": components["schemas"]["Order"];
-        };
-      };
-    };
-  };
-  orders_retrieve: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this order. */
-        id: number;
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Order"];
-        };
-      };
-    };
-  };
-  orders_update: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this order. */
-        id: number;
-      };
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["Order"];
-        "application/x-www-form-urlencoded": components["schemas"]["Order"];
-        "multipart/form-data": components["schemas"]["Order"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Order"];
-        };
-      };
-    };
-  };
-  orders_destroy: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this order. */
-        id: number;
-      };
-    };
-    responses: {
-      /** @description No response body */
-      204: {
-        content: never;
-      };
-    };
-  };
-  orders_partial_update: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this order. */
-        id: number;
-      };
-    };
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["PatchedOrder"];
-        "application/x-www-form-urlencoded": components["schemas"]["PatchedOrder"];
-        "multipart/form-data": components["schemas"]["PatchedOrder"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Order"];
-        };
-      };
-    };
-  };
-  products_list: {
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Product"][];
-        };
-      };
-    };
-  };
-  products_create: {
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["Product"];
-        "application/x-www-form-urlencoded": components["schemas"]["Product"];
-        "multipart/form-data": components["schemas"]["Product"];
-      };
-    };
-    responses: {
-      201: {
-        content: {
-          "application/json": components["schemas"]["Product"];
-        };
-      };
-    };
-  };
-  products_retrieve: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this product. */
-        id: number;
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Product"];
-        };
-      };
-    };
-  };
-  products_update: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this product. */
-        id: number;
-      };
-    };
-    requestBody: {
-      content: {
-        "application/json": components["schemas"]["Product"];
-        "application/x-www-form-urlencoded": components["schemas"]["Product"];
-        "multipart/form-data": components["schemas"]["Product"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Product"];
-        };
-      };
-    };
-  };
-  products_destroy: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this product. */
-        id: number;
-      };
-    };
-    responses: {
-      /** @description No response body */
-      204: {
-        content: never;
-      };
-    };
-  };
-  products_partial_update: {
-    parameters: {
-      path: {
-        /** @description A unique integer value identifying this product. */
-        id: number;
-      };
-    };
-    requestBody?: {
-      content: {
-        "application/json": components["schemas"]["PatchedProduct"];
-        "application/x-www-form-urlencoded": components["schemas"]["PatchedProduct"];
-        "multipart/form-data": components["schemas"]["PatchedProduct"];
-      };
-    };
-    responses: {
-      200: {
-        content: {
-          "application/json": components["schemas"]["Product"];
         };
       };
     };

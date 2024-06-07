@@ -5,6 +5,8 @@ import * as yup from "yup";
 import { request } from "../../lib/axiosUtils";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
+import TextInput from "@/components/TextInput/TextInput";
+import Button from "@/components/Button/Button";
 
 const schema = yup
   .object({
@@ -22,7 +24,7 @@ export default function App() {
   const router = useRouter();
   const { login } = useAuth();
   const {
-    register,
+    control,
     handleSubmit,
     formState: { errors },
   } = useForm<InputType>({
@@ -34,20 +36,33 @@ export default function App() {
       method: "post",
       data: data,
     });
-    login(res.data.user, res.data.refresh_token);
-    router.push("/");
+    login(res.data.user, res.data.access_token);
+    router.push("/order_system/");
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("username")} />
-        <p>{errors.username?.message}</p>
-
-        <input {...register("password")} type="password" />
-        <p>{errors.password?.message}</p>
-
-        <input type="submit" />
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md"
+      >
+        <h1 className="text-2xl font-bold text-center">サンプル受注システム</h1>
+        <TextInput
+          control={control}
+          name="username"
+          errors={errors}
+          label="ユーザー名"
+          className="space-y-2"
+        />
+        <TextInput
+          control={control}
+          name="password"
+          errors={errors}
+          label="パスワード"
+          inputType="password"
+          className="space-y-2"
+        />
+        <Button text="ログイン" className="w-full btn-primary mt-4" />
       </form>
     </div>
   );

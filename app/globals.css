@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn {
+  @apply h-9 text-white px-3 text-sm font-medium rounded-md cursor-pointer disabled:bg-gray-300 disabled:hover:bg-gray-300 disabled:cursor-not-allowed;
+}
+
+.btn-primary {
+  @apply bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800;
+}
+
+.btn-success {
+  @apply bg-green-700 hover:bg-green-800 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800;
+}
+
+.btn-error {
+  @apply bg-red-700 hover:bg-red-800 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800;
+}
+
+.wj-cell:not(.wj-header):not(.wj-operation-cell):not(.wj-alt):not(
+    .wj-state-selected
+  ):not(.wj-state-multi-selected):not(.wj-readonly),
+.wj-form-control {
+  background-color: #e9ffe9 !important; /* Lighter shade for a more subtle appearance */
+}
+
+.wj-alt:not(.wj-header):not(.wj-operation-cell):not(.wj-state-selected):not(
+    .wj-state-multi-selected
+  ):not(.wj-readonly) {
+  background-color: #dcf7dc !important; /* Lighter shade for a more subtle appearance */
+}
+
+.wj-header {
+  background-color: #eee !important; /* Lighter shade for a more subtle appearance */
+}
+
+.wj-operation-cell {
+  background-color: #eee; /* Lighter shade for a more subtle appearance */
+}
+
+.wj-active-grid-wrapper {
+  .wj-content {
+    outline: 2px solid #1976d2;
+  }
+}

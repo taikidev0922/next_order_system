@@ -21,7 +21,7 @@ export default function Menu({ children, items }: PropType) {
         showTrigger="Click"
         hideTrigger="Blur"
         initialized={onMenuInit}
-        className="p-3 absolute"
+        className="p-3 absolute mx-2"
       >
         <div className="flex items-start  flex-col gap-2 ">
           {items.map((item) => (

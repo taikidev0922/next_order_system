@@ -4,37 +4,64 @@ import {
   FlexGrid as FlexGridType,
   ICellTemplateContext,
 } from "@mescius/wijmo.grid";
-import { DataType } from "@mescius/wijmo";
-import { GridColumn } from "@/types/GridColumn";
+import { useEffect, useState } from "react";
+import { useCardContext } from "@/context/CardContext";
+import { FaCopy, FaPlus, FaMinus, FaFileExcel } from "react-icons/fa6";
+import { MdFilterAltOff } from "react-icons/md";
+import GridOperationButton from "../GridOperationButton/GridOperationButton";
+import { useActionContext } from "@/context/ActionContext";
 
 interface GridFormProps {
   itemsSource: any[];
-  columns: GridColumn[];
   onInit: (grid: FlexGridType) => void;
+  addRow: () => void;
+  deleteRow: () => void;
+  copyRow: () => void;
+  clearFilter: () => void;
+  exportExcel: () => void;
+  isActive: boolean;
 }
-
-const dataTypeMap = {
-  string: DataType.String,
-  number: DataType.Number,
-  boolean: DataType.Boolean,
-  date: DataType.Date,
-};
 
 export default function GridForm({
   itemsSource,
-  columns,
   onInit,
+  addRow,
+  deleteRow,
+  copyRow,
+  clearFilter,
+  exportExcel,
+  isActive,
 }: GridFormProps) {
+  const { setResizeGrid } = useCardContext();
+  const { isEditable } = useActionContext();
+  const [gridHeight, setGridHeight] = useState<number>(
+    window.innerHeight - 330,
+  );
+  const resizeGrid = () => {
+    const top = document.querySelector(".flex-grid")?.getClientRects()[0]?.top;
+    const updateGridHeight = () => {
+      setGridHeight(window.innerHeight - (top ?? 0) - 90);
+    };
+    window.addEventListener("resize", updateGridHeight);
+    updateGridHeight();
+  };
+  useEffect(() => {
+    setResizeGrid(() => {
+      return () => {
+        setTimeout(() => {
+          resizeGrid();
+        });
+      };
+    });
+    resizeGrid();
+  }, []);
   return (
-    <div>
+    <div className={isActive ? "wj-active-grid-wrapper" : ""}>
       <FlexGrid
-        initialized={onInit}
         itemsSource={itemsSource}
-        columns={columns.map((column) => ({
-          ...column,
-          dataType: dataTypeMap[column.dataType],
-        }))}
-        autoGenerateColumns={false}
+        initialized={onInit}
+        style={{ height: gridHeight }}
+        className="flex-grid"
       >
         <FlexGridCellTemplate
           cellType="RowHeader"
@@ -43,6 +70,25 @@ export default function GridForm({
           }}
         />
       </FlexGrid>
+      <div className="flex gap-2">
+        <GridOperationButton
+          onClick={addRow}
+          type="add"
+          disabled={!isEditable}
+        />
+        <GridOperationButton
+          onClick={copyRow}
+          type="copy"
+          disabled={!isEditable}
+        />
+        <GridOperationButton
+          onClick={deleteRow}
+          type="delete"
+          disabled={!isEditable}
+        />
+        <GridOperationButton onClick={clearFilter} type="clear" />
+        <GridOperationButton onClick={exportExcel} type="export" />
+      </div>
     </div>
   );
 }

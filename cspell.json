@@ -1,3 +1,10 @@
 {
-  "ignoreWords": ["hookform", "mescius", "wijmo"]
+  "ignoreWords": [
+    "hookform",
+    "mescius",
+    "wijmo"
+  ],
+  "words": [
+    "cellmaker"
+  ]
 }
